@@ -1,0 +1,20 @@
+{
+  "development": {
+
+    "database": "Rhythmic_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+
+    "database": "Rhythmic_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+
+    "database": "Rhythmic_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
