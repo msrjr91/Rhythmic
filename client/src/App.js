@@ -5,7 +5,7 @@ import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import Feed from './pages/Feed'
 import Home from './pages/Home'
-import { CheckSession } from './services/Auth'
+import { CheckSession } from './services/auth'
 import './styles/App.css'
 
 const App = () => {
