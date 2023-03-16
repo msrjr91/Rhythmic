@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'userId'
       })
       Users.hasOne(models.Artists, {
-        foreignKey: 'name'
+        foreignKey: 'userId'
       })
     }
   }
