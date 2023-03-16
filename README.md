@@ -16,5 +16,6 @@ Rhythmic is a social media platform designed to enable communication between art
 ## APIs
 
 ## Stretch Goals
+- Use Spotify Api to import tracks and be able to play songs.
 - Allow users to create playlists.
 - Artists recommendations based on user likes/following history.
