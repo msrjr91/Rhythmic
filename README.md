@@ -10,3 +10,4 @@ Rhythmic is a social media platform designed to enable communication between art
 ## Wireframe
 
 ## ERD
+![ERD](https://user-images.githubusercontent.com/117141950/225721535-cf0a26a3-870f-458d-ae7b-a9f5a7181091.jpg)
