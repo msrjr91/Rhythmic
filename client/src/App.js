@@ -34,11 +34,13 @@ const App = () => {
 
   return (
     <div className="App">
+      <section>
       <Nav
         authenticated={authenticated}
         user={user}
         handleLogOut={handleLogOut}
       />
+      </section>
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

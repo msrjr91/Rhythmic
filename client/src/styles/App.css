@@ -1,0 +1,24 @@
+.home-container{
+    background: gray;
+}
+.home-feed{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+}
+
+.feed{
+    width: 30vw;
+    height: 40vh;
+    border: 2px solid black;
+}
+h2{
+    text-align: center;
+}
+.welcome-signin{
+    height: 30vh;
+    justify-content: center;
+}
+button{
+    max-width: 5vw;
+}
