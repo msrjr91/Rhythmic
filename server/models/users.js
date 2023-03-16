@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Users.hasMany(models.Comments, {
+        foreignKey: 'userId'
+      })
+      Users.hasOne(models.Artists, {
+        foreignKey: 'name'
+      })
     }
   }
   Users.init({
@@ -22,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Users',
+    tableName: 'users'
   });
   return Users;
 };
