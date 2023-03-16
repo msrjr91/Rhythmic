@@ -4,12 +4,17 @@ const Home = () => {
   let navigate = useNavigate()
 
   return (
-    <div className="home-container col">
+    <div className="home-container">
       <section className="welcome-signin">
-        <button onClick={() => navigate('/signin')}>
+      <button onClick={() => navigate('/signin')}>
             Sign In
         </button>
-      </section>
+        </section>
+      <div className="home-feed">
+        <div className="feed"><h2>New Tracks</h2></div>
+        <div className="feed"><h2>New Comments</h2></div>
+        <div className="feed"><h2>New Artists</h2></div>
+      </div>
     </div>
   )
 }
