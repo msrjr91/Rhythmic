@@ -13,6 +13,8 @@ Rhythmic is a social media platform designed to enable communication between art
 ## ERD
 ![ERD](https://user-images.githubusercontent.com/117141950/225721535-cf0a26a3-870f-458d-ae7b-a9f5a7181091.jpg)
 
+## APIs
+
 ## Stretch Goals
 - Allow users to create playlists.
 - Artists recommendations based on user likes/following history.
