@@ -9,9 +9,12 @@ Rhythmic is a social media platform designed to enable communication between art
 - Users posts will show in chronological order on the home page.
 
 ## Wireframe
+![Screenshot (1)](https://user-images.githubusercontent.com/117141950/225739056-b293860e-0516-44f8-a7fa-217260bcf4eb.png)
+![Screenshot (2)](https://user-images.githubusercontent.com/117141950/225739076-f45abd46-3207-48d8-93e0-21c34f053dfa.png)
+
 
 ## ERD
-![erd (1)](https://user-images.githubusercontent.com/117141950/225728338-d3221b9d-dec0-4701-8612-15146d4cb3a9.jpg)
+![ERD (2)](https://user-images.githubusercontent.com/117141950/225739194-83d9f5a1-505f-455c-923f-123b460bff94.jpg)
 
 ## APIs
 
