@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       Posts.hasMany(models.Comments, {
         foreignKey: 'postId'
       })
-      Posts.hasOne(models.Tracks, {
+      Posts.hasMany(models.Tracks, {
         foreignKey: 'trackId'
       })
       Posts.belongsTo(models.Users, {
