@@ -1,47 +1,47 @@
-const { Post } = require('../models')
+const { Comments } = require('../models')
 
-const GetPosts = async (req, res) => {
+const GetComments = async (req, res) => {
   try {
-    const posts = await Post.findAll()
-    res.send(posts)
+    const comments = await Comments.findAll()
+    res.send(comments)
   } catch (error) {
     throw error
   }
 }
 
-const CreatePost = async (req, res) => {
+const CreateComments = async (req, res) => {
   try {
-    const post = await Post.create({ ...req.body })
-    res.send(post)
+    const comments = await Comments.create({ ...req.body })
+    res.send(comments)
   } catch (error) {
     throw error
   }
 }
 
-const UpdatePost = async (req, res) => {
+const UpdateComments = async (req, res) => {
   try {
-    const post = await Post.update(
+    const comments = await Comments.update(
       { ...req.body },
-      { where: { id: req.params.post_id }, returning: true }
+      { where: { id: req.params.comment_id }, returning: true }
     )
-    res.send(post)
+    res.send(comments)
   } catch (error) {
     throw error
   }
 }
 
-const DeletePost = async (req, res) => {
+const DeleteComments = async (req, res) => {
   try {
-    await Post.destroy({ where: { id: req.params.post_id } })
-    res.send({ msg: 'Post Deleted', payload: req.params.post_id, status: 'Ok' })
+    await Comments.destroy({ where: { id: req.params.comments_id } })
+    res.send({ msg: 'Comments Deleted', payload: req.params.comments_id, status: 'Ok' })
   } catch (error) {
     throw error
   }
 }
 
 module.exports = {
-  GetPosts,
-  CreatePost,
-  UpdatePost,
-  DeletePost
+  GetComments,
+  CreateComments,
+  UpdateComments,
+  DeleteComments
 }

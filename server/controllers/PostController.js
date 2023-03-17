@@ -1,8 +1,8 @@
-const { Post } = require('../models')
+const { Posts } = require('../models')
 
 const GetPosts = async (req, res) => {
   try {
-    const posts = await Post.findAll()
+    const posts = await Posts.findAll()
     res.send(posts)
   } catch (error) {
     throw error
@@ -11,7 +11,7 @@ const GetPosts = async (req, res) => {
 
 const CreatePost = async (req, res) => {
   try {
-    const post = await Post.create({ ...req.body })
+    const post = await Posts.create({ ...req.body })
     res.send(post)
   } catch (error) {
     throw error
@@ -20,7 +20,7 @@ const CreatePost = async (req, res) => {
 
 const UpdatePost = async (req, res) => {
   try {
-    const post = await Post.update(
+    const post = await Posts.update(
       { ...req.body },
       { where: { id: req.params.post_id }, returning: true }
     )
@@ -32,8 +32,8 @@ const UpdatePost = async (req, res) => {
 
 const DeletePost = async (req, res) => {
   try {
-    await Post.destroy({ where: { id: req.params.post_id } })
-    res.send({ msg: 'Post Deleted', payload: req.params.post_id, status: 'Ok' })
+    await Posts.destroy({ where: { id: req.params.post_id } })
+    res.send({ msg: 'Posts Deleted', payload: req.params.post_id, status: 'Ok' })
   } catch (error) {
     throw error
   }
