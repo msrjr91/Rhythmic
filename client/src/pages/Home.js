@@ -9,6 +9,9 @@ const Home = () => {
       <button onClick={() => navigate('/signin')}>
             Sign In
         </button>
+        <div className="register">
+          <button className="register-button" onClick={() => navigate('/register')}>What's Your Rhythm?</button>
+        </div>
         </section>
       <div className="home-feed">
         <div className="feed"><h2>New Tracks</h2></div>
