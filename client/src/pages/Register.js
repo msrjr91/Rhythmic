@@ -79,6 +79,14 @@ const Register = () => {
               required
             />
           </div>
+          <div className="input-wrapper">
+            <label htmlFor="isArtist">Artist or Fan?</label>
+            <select>
+              <option value="true">Artist</option>
+              <option value="false">Fan</option>
+            </select>
+          </div>
+
           <button
             disabled={
               !formValues.email ||
