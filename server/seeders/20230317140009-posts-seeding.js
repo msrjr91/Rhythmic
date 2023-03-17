@@ -12,7 +12,7 @@ module.exports = {
         return {
           userId: user.id,
           content: falso.randLine,
-          trackURI: track.id,
+          trackId: track.id,
           createdAt: new Date,
           updatedAt: new Date
         }
