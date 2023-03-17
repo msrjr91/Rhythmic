@@ -8,6 +8,8 @@ import Home from './pages/Home'
 import { CheckSession } from './services/auth'
 import './styles/App.css'
 
+import Profile from './pages/Profile'
+
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
@@ -51,6 +53,9 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/feed" element=
           {<Feed  user={user}
+                  authenticated={authenticated}/>} />
+          <Route path="/profile" element=
+          {<Profile  user={user}
                   authenticated={authenticated}/>} />
         </Routes>
       </main>
