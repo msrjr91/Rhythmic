@@ -55,7 +55,7 @@ const App = () => {
         </Routes>
       </main>
     </div>
-  )
+  ) 
 }
 
 export default App

@@ -18,7 +18,7 @@ const SignIn = (props) => {
     props.setUser(payload)
     props.toggleAuthenticated(true)
     navigate('/feed')
-  }
+  } 
 
   return (
     <div className="signin col">
