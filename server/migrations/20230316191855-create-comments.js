@@ -12,7 +12,7 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER
       },
-      trackId: {
+      postId: {
         type: Sequelize.INTEGER
       },
       content: {
