@@ -1,12 +1,13 @@
-import SearchBar from "./SearchBar";
+import {useNavigate} from 'react-router-dom'
+import SearchBar from './SearchBar'
 
 export default function Nav() {
-    return ( 
+    let navigate = useNavigate()
+    return (
         <div>
-        <p>im the nav bar</p>
-
+        <p>im nav</p>
+        <button onClick={()=>navigate('/')}>Home</button>
         <SearchBar />
-        
         </div>
         
     )
