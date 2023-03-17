@@ -3,6 +3,9 @@ const cors = require('cors')
 const logger = require('morgan')
 const AuthRouter = require('./routes/AuthRouter')
 const PostRouter = require('./routes/PostRouter')
+const TrackRouter = require('./routes/TrackRouter')
+const CommentRouter = require('./routes/CommentRouter')
+const ArtistRouter = require('./routes/ArtistRouter')
 
 const app = express()
 
@@ -14,5 +17,6 @@ app.use(express.json())
 
 app.use('/auth', AuthRouter)
 app.use('/posts', PostRouter)
+app.use('/')
 
 app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`))
