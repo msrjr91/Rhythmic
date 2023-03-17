@@ -15,11 +15,5 @@ router.put(
   middleware.verifyToken,
   controller.UpdatePost
 )
-router.delete(
-  '/:post_id',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.DeletePost
-)
 
 module.exports = router

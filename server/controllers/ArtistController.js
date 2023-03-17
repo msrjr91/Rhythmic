@@ -1,47 +1,37 @@
-const { Post } = require('../models')
+const { Artists } = require('../models')
 
-const GetPosts = async (req, res) => {
+const GetArtists = async (req, res) => {
   try {
-    const posts = await Post.findAll()
-    res.send(posts)
+    const artists = await Artists.findAll()
+    res.send(artists)
   } catch (error) {
     throw error
   }
 }
 
-const CreatePost = async (req, res) => {
+const CreateArtists = async (req, res) => {
   try {
-    const post = await Post.create({ ...req.body })
-    res.send(post)
+    const artists = await Artists.create({ ...req.body })
+    res.send(artists)
   } catch (error) {
     throw error
   }
 }
 
-const UpdatePost = async (req, res) => {
+const UpdateArtists = async (req, res) => {
   try {
-    const post = await Post.update(
+    const artists = await Artists.update(
       { ...req.body },
-      { where: { id: req.params.post_id }, returning: true }
+      { where: { id: req.params.artist_id }, returning: true }
     )
-    res.send(post)
-  } catch (error) {
-    throw error
-  }
-}
-
-const DeletePost = async (req, res) => {
-  try {
-    await Post.destroy({ where: { id: req.params.post_id } })
-    res.send({ msg: 'Post Deleted', payload: req.params.post_id, status: 'Ok' })
+    res.send(artists)
   } catch (error) {
     throw error
   }
 }
 
 module.exports = {
-  GetPosts,
-  CreatePost,
-  UpdatePost,
-  DeletePost
+  GetArtists,
+  CreateArtists,
+  UpdateArtists,
 }
