@@ -4,7 +4,17 @@ export default function Profile(){
         <div>
         <h1> this is a user profile </h1>
         <section> 
-            <div>Username display</div>
+            <figure>
+                <figcaption style={{color: 'white', textShadow: '0 0 10px purple'}}>
+                    'Username'
+                </figcaption>
+            </figure>
+            <figure>
+    <figcaption style={{color: 'white', textShadow: '0 0 10px purple'}}>
+    'User' is listening to...
+    </figcaption>
+    <audio controls src='null'/>
+</figure> 
         </section>
         <section>
             <div>Following/Liked Artists/Fans</div>
