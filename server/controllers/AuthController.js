@@ -1,9 +1,9 @@
-const { User } = require('../models')
+const { Users } = require('../models')
 const middleware = require('../middleware')
 
 const Login = async (req, res) => {
   try {
-    const user = await User.findOne({
+    const user = await Users.findOne({
       where: { email: req.body.email },
       raw: true
     })
@@ -28,7 +28,7 @@ const Register = async (req, res) => {
   try {
     const { email, password, name } = req.body
     let passwordDigest = await middleware.hashPassword(password)
-    const user = await User.create({ email, passwordDigest, name })
+    const user = await Users.create({ email, passwordDigest, name })
     res.send(user)
   } catch (error) {
     throw error
@@ -38,7 +38,7 @@ const Register = async (req, res) => {
 const UpdatePassword = async (req, res) => {
   try {
     const { oldPassword, newPassword } = req.body
-    const user = await User.findByPk(req.params.user_id)
+    const user = await Users.findByPk(req.params.user_id)
     if (
       user &&
       (await middleware.comparePassword(
