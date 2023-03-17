@@ -1,11 +1,13 @@
 import SearchBar from "./SearchBar";
 
 export default function Nav() {
-    return (
+    return ( 
         <div>
-        <p>im nav
-            <SearchBar />
-        </p>
+        <p>im the nav bar</p>
+
+        <SearchBar />
+        
         </div>
+        
     )
 }

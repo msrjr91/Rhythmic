@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(121, 169, 181)
+}
+
 .home-container{
     background: gray;
 }
@@ -21,4 +25,14 @@ h2{
 }
 button{
     max-width: 5vw;
+}
+
+.searchbar {
+    width:400px;
+    height:35px;
+    border: bold;
+    outline:none;
+    border-radius: 200px;
+    padding: 1rem 1rem;
+    align-items: left;
 }
