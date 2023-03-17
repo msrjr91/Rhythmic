@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      trackId: {
+      trackURI: {
         type: Sequelize.INTEGER
       },
       title: {

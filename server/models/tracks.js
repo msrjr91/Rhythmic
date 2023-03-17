@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Tracks.init({
-    trackId: DataTypes.INTEGER,
+    trackURI: DataTypes.INTEGER,
     title: DataTypes.STRING,
     artist: DataTypes.STRING
   }, {
