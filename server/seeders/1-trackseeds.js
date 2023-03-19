@@ -1,6 +1,6 @@
 'use strict';
-
 const falso = require('@ngneat/falso')
+
 const tracks = [...Array(15)].map(() => ({
     trackURI: falso.randNumber(),
     title: falso.randCatchPhrase(),
