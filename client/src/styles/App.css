@@ -24,7 +24,25 @@ h2{
     justify-content: center;
 }
 button{
-    max-width: 5vw;
+    /* max-width: 5vw; */
+}
+
+.register {
+    text-align: center;
+    height: 50px;
+}
+
+.registerbtn {
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+}
+
+.signinbtn {
+    justify-content: right;
+    text-align: right;
+    margin-left: 1200px;
 }
 
 .searchbar {
@@ -34,5 +52,5 @@ button{
     outline:none;
     border-radius: 200px;
     padding: 1rem 1rem;
-    align-items: left;
+    justify-content: left;
 }

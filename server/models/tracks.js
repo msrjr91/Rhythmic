@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   class Tracks extends Model {
     static associate(models) {
       Tracks.belongsTo(models.Posts, {
-        foreignKey: 'trackId'
+        foreignKey: 'trackId',
       })
     }
   }
