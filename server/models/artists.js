@@ -16,7 +16,14 @@ module.exports = (sequelize, DataTypes) => {
     artistId: DataTypes.INTEGER,
     name: DataTypes.STRING,
     fans: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    userId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Artists',

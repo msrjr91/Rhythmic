@@ -16,8 +16,22 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Comments.init({
-    userId: DataTypes.INTEGER,
-    postId: DataTypes.INTEGER,
+    userId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    },
+    postId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'posts',
+        key: 'id'
+      }
+    },
     content: DataTypes.STRING
   }, {
     sequelize,

@@ -19,9 +19,22 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Posts.init({
-    userId: DataTypes.INTEGER,
+    userId: {
+      type: DataTypes.INTEGER, 
+      onDelete: 'CASCADE',
+      references: {
+        model: 'users',
+        key: 'id'}
+      },
     content: DataTypes.STRING,
-    trackId: DataTypes.INTEGER
+    trackId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'tracks',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Posts',
