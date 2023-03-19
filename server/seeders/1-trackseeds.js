@@ -11,7 +11,7 @@ const tracks = [...Array(15)].map(() => ({
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert("tracks", tracks)
+    return queryInterface.bulkInsert('tracks', tracks)
   },
   async down (queryInterface, Sequelize) {
     return queryInterface.bulkDelete('tracks')
