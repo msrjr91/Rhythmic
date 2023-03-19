@@ -6,7 +6,9 @@ const users = [...Array(100)].map(() => ({
   email: falso.randEmail(),
   password: falso.randPassword(),
   username: falso.randUserName(),
-  isArtist: falso.randBoolean()
+  isArtist: falso.randBoolean(),
+  createdAt: new Date,
+  updatedAt: new Date
 }))
 
 module.exports = {
