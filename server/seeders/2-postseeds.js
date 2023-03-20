@@ -1,5 +1,5 @@
 'use strict'
-const { Users, Tracks, Comments, sequelize } = require('../models')
+const { Users, sequelize } = require('../models')
 const falso = require('@ngneat/falso')
 
 const posts = [...Array(15)].map(async () => {
