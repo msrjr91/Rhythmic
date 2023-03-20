@@ -1,6 +1,6 @@
 const { Users } = require('../models')
 
-const getAllUsers = async(req,res) => {
+const GetAllUsers = async(req,res) => {
   try {
     const users = await Users.findAll()
     res.send(users)
@@ -9,7 +9,6 @@ const getAllUsers = async(req,res) => {
   }
 }
 
-
 module.exports = {
-  getAllUsers
+  GetAllUsers
 }
