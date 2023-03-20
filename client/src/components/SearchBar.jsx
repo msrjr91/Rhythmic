@@ -15,6 +15,8 @@ const SearchBar = () => {
             // onClick={searchMeal}
             > Search </button>
 
+
+
         </div>
     
 
