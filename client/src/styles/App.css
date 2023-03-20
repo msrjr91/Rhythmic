@@ -1,9 +1,9 @@
 body{
-    background-color: rgb(121, 169, 181)
+    background-color: rgb(26, 38, 41)
 }
 
 .home-container{
-    background: gray;
+    background: rgb(153, 152, 152);
 }
 .home-feed{
     display: flex;
@@ -16,13 +16,16 @@ body{
     height: 40vh;
     border: 2px solid black;
 }
+
 h2{
     text-align: center;
 }
+
 .welcome-signin{
     height: 30vh;
     justify-content: center;
 }
+
 button{
     /* max-width: 5vw; */
 }
@@ -53,4 +56,13 @@ button{
     border-radius: 200px;
     padding: 1rem 1rem;
     justify-content: left;
+}
+
+.logo {
+    transform: scale(.50);
+    top: 0;
+    left: 0;
+    transform: translate(70%, 35%);
+    
+
 }
