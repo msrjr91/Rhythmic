@@ -1,4 +1,5 @@
 'use strict'
+
 const falso = require('@ngneat/falso')
 
 const users = [...Array(100)].map(() => ({

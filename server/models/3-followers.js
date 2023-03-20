@@ -1,22 +1,17 @@
 'use strict'
-const {
-  Model
-} = require('sequelize')
+
+const { Model } = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
-  class Comments extends Model {
+  class Followers extends Model {
     static associate(models) {
-      Comments.belongsTo(models.Users, {
+      Followers.belongsTo(models.Users, {
         foreignKey: 'userId'
-      })
-      Comments.belongsTo(models.Posts, {
-        foreignKey: 'postId'
       })
     }
   }
-
-  Comments.init({
-    userId: {
+  Followers.init({
+    followerId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
@@ -24,20 +19,18 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    postId: {
+    userId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
-        model: 'posts',
+        model: 'users',
         key: 'id'
       }
-    },
-    content: DataTypes.STRING
+    }
   }, {
     sequelize,
-    modelName: 'Comments',
-    tableName: 'comments'
+    modelName: 'Followers',
+    tableName: 'followers'
   })
-
   return Comments
 }
