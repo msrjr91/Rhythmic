@@ -11,8 +11,10 @@ const GetAllUsers = async(req,res) => {
 
 const GetUserFollowers = async (req, res) => {
   try {
-      const followers = await Followers.findByPk(req.params.userId)
-      res.send(followers);
+    let data = await Users.findAll({
+      include: [{model: Users, as: 'followers', attributes: ['id', 'username']}]
+    })
+    res.send(data)
     } catch (error) {
       throw error;
   }
@@ -20,10 +22,10 @@ const GetUserFollowers = async (req, res) => {
 
 const GetUserFollowing = async (req, res) => {
   try {
-      const following = await Park.findByPk(req.params.parkId, {
-        include: [{ model: Region }],
-      });
-      res.send(following);
+    let data = await Users.findAll({
+      include: [{model: Users, as: 'following', attributes: ['id', 'username']}]
+    })
+    res.send(data)
     } catch (error) {
       throw error;
   }
@@ -32,5 +34,6 @@ const GetUserFollowing = async (req, res) => {
 
 module.exports = {
   GetAllUsers,
-  GetUserFollowers
+  GetUserFollowers,
+  GetUserFollowing
 }
