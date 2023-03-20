@@ -3,9 +3,6 @@ const cors = require('cors')
 const logger = require('morgan')
 const AuthRouter = require('./routes/AuthRouter')
 const PostRouter = require('./routes/PostRouter')
-const TrackRouter = require('./routes/TrackRouter')
-const CommentRouter = require('./routes/CommentRouter')
-const ArtistRouter = require('./routes/ArtistRouter')
 
 const app = express()
 
