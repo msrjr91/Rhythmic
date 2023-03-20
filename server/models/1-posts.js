@@ -21,9 +21,9 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    content: DataTypes.STRING,
+    content: DataTypes.TEXT,
     trackId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.TEXT,
     }
   }, {
     sequelize,

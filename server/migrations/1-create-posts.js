@@ -20,10 +20,10 @@ module.exports = {
         }
       },
       content: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       trackId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.TEXT,
       },
       createdAt: {
         allowNull: false,
