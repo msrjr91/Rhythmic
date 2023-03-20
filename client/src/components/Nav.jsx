@@ -6,7 +6,11 @@ export default function Nav() {
     return (
         <div>
         <p>im nav</p>
+
         <button onClick={()=>navigate('/')}>Home</button>
+
+        <img className="logo" src="/images/rhythmic.png" alt="" />
+ 
         <SearchBar />
         </div>
         
