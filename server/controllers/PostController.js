@@ -33,7 +33,7 @@ const UpdatePost = async (req, res) => {
 const DeletePost = async (req, res) => {
   try {
     await Posts.destroy({ where: { id: req.params.post_id } })
-    res.send({ msg: 'Posts Deleted', payload: req.params.post_id, status: 'Ok' })
+    res.send({ msg: 'Post Deleted', payload: req.params.post_id, status: 'Ok' })
   } catch (error) {
     throw error
   }
