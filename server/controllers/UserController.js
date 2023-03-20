@@ -1,4 +1,4 @@
-const { Users } = require('../models')
+const { Users, Followers } = require('../models')
 
 const GetAllUsers = async(req,res) => {
   try {
@@ -9,6 +9,28 @@ const GetAllUsers = async(req,res) => {
   }
 }
 
+const GetUserFollowers = async (req, res) => {
+  try {
+      const followers = await Followers.findByPk(req.params.userId)
+      res.send(followers);
+    } catch (error) {
+      throw error;
+  }
+}
+
+const GetUserFollowing = async (req, res) => {
+  try {
+      const following = await Park.findByPk(req.params.parkId, {
+        include: [{ model: Region }],
+      });
+      res.send(following);
+    } catch (error) {
+      throw error;
+  }
+}
+
+
 module.exports = {
-  GetAllUsers
+  GetAllUsers,
+  GetUserFollowers
 }
