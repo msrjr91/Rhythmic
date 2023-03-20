@@ -1,8 +1,10 @@
-'use strict';
+'use strict'
+
 /** @type {import('sequelize-cli').Migration} */
+
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('posts', {
+    await queryInterface.createTable('comments', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -17,12 +19,16 @@ module.exports = {
           key: 'id'
         }
       },
+      postId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'posts',
+          key: 'id'
+        }
+      },
       content: {
         type: Sequelize.STRING
-      },
-      trackId: {
-        type: Sequelize.INTEGER,
-
       },
       createdAt: {
         allowNull: false,
@@ -32,9 +38,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('posts');
+    await queryInterface.dropTable('comments')
   }
-};
+}

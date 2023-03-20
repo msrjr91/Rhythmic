@@ -1,20 +1,17 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+'use strict'
+
+const { Model } = require('sequelize')
+
 module.exports = (sequelize, DataTypes) => {
   class Followers extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      Followers.belongsTo(models.Users, {
+        foreignKey: 'userId'
+      })
     }
   }
   Followers.init({
-    userId: {
+    followerId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
@@ -22,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    followerId: {
+    userId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
@@ -35,6 +32,5 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Followers',
     tableName: 'followers'
   })
-
-  return Comments
+  return Followers
 }
