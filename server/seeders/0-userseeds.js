@@ -8,8 +8,8 @@ const users = [...Array(100)].map(() => ({
   password: falso.randPassword(),
   username: falso.randUserName(),
   isArtist: falso.randBoolean(),
-  createdAt: new Date,
-  updatedAt: new Date
+  createdAt: new Date(),
+  updatedAt: new Date()
 }))
 
 module.exports = {

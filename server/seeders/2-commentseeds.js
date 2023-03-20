@@ -9,9 +9,9 @@ const comments = [...Array(100)].map(async () => {
   return {
     userId: user.id,
     postId: post.id,
-    content: falso.randLine,
-    createdAt: new Date,
-    updatedAt: new Date
+    content: falso.randLine(),
+    createdAt: new Date(),
+    updatedAt: new Date()
   }
 })
 

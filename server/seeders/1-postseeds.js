@@ -9,8 +9,8 @@ const posts = [...Array(100)].map(async () => {
     userId: user.id,
     content: falso.randLine(),
     trackId: falso.randUuid(),
-    createdAt: new Date,
-    updatedAt: new Date
+    createdAt: new Date(),
+    updatedAt: new Date()
   }
 })
 

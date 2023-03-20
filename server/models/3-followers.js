@@ -32,5 +32,5 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Followers',
     tableName: 'followers'
   })
-  return Comments
+  return Followers
 }
