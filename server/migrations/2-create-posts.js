@@ -22,11 +22,7 @@ module.exports = {
       },
       trackId: {
         type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'tracks',
-          key: 'id'
-        }
+
       },
       createdAt: {
         allowNull: false,

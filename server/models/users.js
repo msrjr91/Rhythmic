@@ -6,14 +6,15 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
     static associate(models) {
-      Users.hasMany(models.Comments, {
-        foreignKey: 'userId'
-      })
-      Users.hasOne(models.Artists, {
-        foreignKey: 'userId'
-      })
+      Users.hasMany(models.Comments, {foreignKey: 'userId'})
 
       Users.hasMany(models.Posts, {foreignKey: 'userId'})
+
+      Users.belongsToMany(models.Users, {as: 'followers', foreignKey: 'userId', through: models.Followers})
+
+      Users.belongsToMany(models.Users, {as: 'following', foreignKey: 'followerId', through: models.Followers})
+
+      // Users.belongsToMany(models.Tracks, {as: 'user_posted_tracks', foreignKey: 'userId'})
 
       
     }
