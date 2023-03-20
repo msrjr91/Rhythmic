@@ -1,10 +1,5 @@
 const express = require('express')
 const cors = require('cors')
-<<<<<<< HEAD
-const logger = require('morgan')
-const AuthRouter = require('./routes/AuthRouter')
-const PostRouter = require('./routes/PostRouter')
-=======
 const AppRouter = require('./routes/AppRouter')
 
 // const logger = require('morgan')
@@ -13,7 +8,6 @@ const AppRouter = require('./routes/AppRouter')
 // const TrackRouter = require('./routes/TrackRouter')
 // const CommentRouter = require('./routes/CommentRouter')
 // const ArtistRouter = require('./routes/ArtistRouter')
->>>>>>> 2b74e921df543110d2a49448cc0e6178d49d57f1
 
 const app = express()
 
