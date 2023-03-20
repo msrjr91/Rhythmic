@@ -6,14 +6,13 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Posts extends Model {
     static associate(models) {
-      Posts.hasMany(models.Comments, {
-        foreignKey: 'postId'
-      })
-      Posts.hasMany(models.Tracks, {
-        foreignKey: 'trackId'
-      })
+
       Posts.belongsTo(models.Users, {
         foreignKey: 'userId'
+      })
+
+      Posts.hasMany(models.Comments, {
+        foreignKey: 'postId'
       })
     }
   }
@@ -29,11 +28,6 @@ module.exports = (sequelize, DataTypes) => {
     content: DataTypes.STRING,
     trackId: {
       type: DataTypes.INTEGER,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'tracks',
-        key: 'id'
-      }
     }
   }, {
     sequelize,
