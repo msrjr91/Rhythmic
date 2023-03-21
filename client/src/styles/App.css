@@ -52,7 +52,7 @@
     width: 30vw;
     height: 40vh;
     border: 2px solid black;
-    overlay: automatic;
+    overflow: automatic;
 }
 
 
