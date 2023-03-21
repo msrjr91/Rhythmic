@@ -62,14 +62,16 @@
     background-color: rgb(26, 38, 41);
     margin-top: -250px;
 }
+*/
 
 .home-container {
     background: gray;
+    height: 806px;
 }
 .home-feed {
     display: flex;
     justify-content: space-between;
-} */
+} 
 
 
 /* h2{
