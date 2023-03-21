@@ -32,6 +32,12 @@ const GetUserPosts = async (req,res) => {
   }
 }
 
+// CreatePost - Insomnia format
+  // {
+  //   "content": "",
+  //   "trackId": ""
+  // }
+// first login to get token
 const CreatePost = async (req,res) => {
   try {
     let userId = parseInt(req.params.user_id)

@@ -1,6 +1,33 @@
 const { Users } = require('../models')
 const middleware = require('../middleware')
 
+// Register - Insomnia format
+  // {
+  //   "name": "",
+  //   "email": "",
+  //   "passwordInput": "",
+  // 	"username": "",
+  // 	"isArtist": "",
+  // 	"avatar": ""
+  // }
+const Register = async (req, res) => {
+  try {
+    const { name, email, passwordInput, username, isArtist, avatar } = req.body
+    let password = await middleware.hashPassword(passwordInput)
+    const user = await Users.create({ name, email, password, username, isArtist, avatar })
+    res.send(user)
+  } catch (error) {
+    throw error
+  }
+}
+
+// Login - Insomnia format
+  // {
+  //   "name": "",
+  //   "email": "",
+  //   "passwordInput": ""
+  // }
+  // Remember to add bearer token
 const Login = async (req, res) => {
   try {
     const user = await Users.findOne({
@@ -9,7 +36,7 @@ const Login = async (req, res) => {
     })
     if (
       user &&
-      (await middleware.comparePassword(user.passwordDigest, req.body.password))
+      (await middleware.comparePassword(user.password, req.body.passwordInput))
     ) {
       let payload = {
         id: user.id,
@@ -19,17 +46,6 @@ const Login = async (req, res) => {
       return res.send({ user: payload, token })
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
-  } catch (error) {
-    throw error
-  }
-}
-
-const Register = async (req, res) => {
-  try {
-    const { email, password, name } = req.body
-    let passwordDigest = await middleware.hashPassword(password)
-    const user = await Users.create({ email, passwordDigest, name })
-    res.send(user)
   } catch (error) {
     throw error
   }
