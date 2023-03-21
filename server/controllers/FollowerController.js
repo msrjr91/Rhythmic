@@ -24,7 +24,7 @@ const GetFollowersByUser = async (req, res) => {
 }
 
 // RETURNS ALL USERS THAT USERID FOLLOWS:  userId follows [1,2,...n]
-const GetFollwersByFollower = async (req,res) => {
+const GetFollowersByFollower = async (req,res) => {
   try {
     const followers = await Followers.findAll({
       where: { followerId: req.params.follower_id }
@@ -39,8 +39,8 @@ const GetFollwersByFollower = async (req,res) => {
 // "I (FOLLOWER ID) WANT TO FOLLOW SOME USER (USER ID)"
 const FollowUser = async (req,res) => {
   try {
-    let followerId = parseInt(req.params.follower_id)
-    let followBody = { followerId, ...req.body }
+    let userId = parseInt(req.params.user_id)
+    let followBody = { userId, ...req.body }
     let follow = await Followers.create(followBody)
     res.send(follow)
   } 
@@ -64,6 +64,6 @@ const FollowUser = async (req,res) => {
 module.exports = {
   GetFollowers,
   GetFollowersByUser,
-  GetFollwersByFollower,
+  GetFollowersByFollower,
   FollowUser
 }
