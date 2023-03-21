@@ -26,6 +26,27 @@ const App = () => {
   const [ songQueue, setSongQueue ] = useState([])
   const qs = require('qs')
 
+  //////////////////////////////////////
+
+  const [users, setUsers] = useState([])
+  const [comments, setComments] = useState([])
+  const [posts, setPosts] = useState([])
+  const [followers, setFollowers] = useState([])
+
+  useEffect(() => {
+    const getUsers = async () => {
+      const response = await axios.get('localhost:3001/users');
+      setUsers(response.data)
+      console.log(response.data)
+    }
+
+    getUsers()
+  },[]);
+
+
+////////////////////////////////////////////
+
+
   const getToken = async () => {
 
     try{
