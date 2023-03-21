@@ -1,22 +1,64 @@
+.App {
+    text-align: center;
+    background: rgb(20, 20, 20);
+}
 
-  body{
+.nav {
+    height: 220px;
+    background: rgb(51, 51, 51);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    text-align: center;
+    border: solid black 1px; 
+}
+
+.nav-left {
+    margin: 20px;
+    display: flex;
+    justify-content: left;
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.nav-right-buttons {
+    margin: 20px;
+    height: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: -30px;
+    margin-top: -20px;
+}
+
+
+
+
+/* body {
     background-color: rgb(26, 38, 41);
     margin-top: -250px;
 }
 
-.home-container{
+.home-container {
     background: gray;
 }
-.home-feed{
+.home-feed {
     display: flex;
     justify-content: space-between;
-    border: 2px solid black;
 }
 
-.feed{
+.feed {
     width: 30vw;
     height: 40vh;
     border: 2px solid black;
+    overlay: automatic;
 }
 h2{
     text-align: center;
@@ -25,15 +67,16 @@ h2{
     height: 30vh;
     justify-content: center;
 }
-button{
+
+button {
     /* max-width: 5vw; */
-}
+/* }
 
 .register {
     text-align: center;
     height: 50px;
     margin-top: 4rem;
-}
+} 
 
 .registerbtn {
     width: 300px;
@@ -47,7 +90,6 @@ button{
 .profilebtn {
 margin-left: 1rem;
 }
-
 
 .signinbtn {
     justify-content: right;
@@ -73,7 +115,7 @@ margin-left: 1rem;
     transform: translate(70%, 35%);
     
 
-}
+} */ 
 
 /* .nav {
     margin-top: -200px;
