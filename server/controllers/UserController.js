@@ -1,4 +1,4 @@
-const { Users, Followers } = require('../models')
+const { Users, Posts, Followers } = require('../models')
 
 const GetAllUsers = async(req,res) => {
   try {
@@ -31,9 +31,21 @@ const GetUserFollowing = async (req, res) => {
   }
 }
 
+const GetUserPosts = async (req,res) => {
+  try {
+    let data = await Users.findAll({
+      include: [{model: Posts}]
+    })
+    res.send(data)
+  } catch (error) {
+    throw error
+  }
+}
+
 
 module.exports = {
   GetAllUsers,
   GetUserFollowers,
-  GetUserFollowing
+  GetUserFollowing,
+  GetUserPosts
 }
