@@ -26,7 +26,6 @@ const App = () => {
   const [ accessToken, setAccessToken ] = useState("")
   const [ songQueue, setSongQueue ] = useState([])
 
-  //////
   const [users, setUsers] = useState(null)
   const [comments, setComments] = useState(null)
   const [posts, setPosts] = useState(null)
@@ -87,7 +86,20 @@ const App = () => {
     }
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+  }
 
+  useEffect(() => {
+    const getUsers = async () => {
+      const response = await axios.get('localhost:3001/users');
+      setUsers(response.data)
+      console.log(response.data)
+    }
+
+    getUsers()
+  },[])
+  
   // const handleLogOut = () => {
   //   //Reset all auth related state and clear localStorage
   //   setUser(null)
