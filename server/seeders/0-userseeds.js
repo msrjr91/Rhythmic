@@ -8,6 +8,7 @@ const users = [...Array(100)].map(() => ({
   password: falso.randPassword(),
   username: falso.randUserName(),
   isArtist: falso.randBoolean(),
+  avatar: falso.randAvatar(),
   createdAt: new Date(),
   updatedAt: new Date()
 }))

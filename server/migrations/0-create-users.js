@@ -1,5 +1,7 @@
 'use strict'
 
+const { sequelize } = require('../models')
+
 /** @type {import('sequelize-cli').Migration} */
 
 module.exports = {
@@ -25,6 +27,9 @@ module.exports = {
       },
       isArtist: {
         type: Sequelize.BOOLEAN
+      },
+      avatar: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
