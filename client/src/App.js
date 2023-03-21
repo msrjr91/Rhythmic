@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import { CheckSession } from './services/auth'
 import './styles/App.css'
 import { DataContext } from './DataContext'
+import { RegisterUser } from './services/auth'
 
 import Profile from './pages/Profile'
 
@@ -20,8 +21,8 @@ const CLIENT_SECRET = "d019c8515e95467fafda7e13566c058c"
 const auth_token = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`, 'utf-8').toString('base64')
 
 const App = () => {
-  const [authenticated, toggleAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
+  const [ authenticated, toggleAuthenticated ] = useState(false)
+  const [ user, setUser ] = useState(null)
   const [ accessToken, setAccessToken ] = useState("")
   const [ songQueue, setSongQueue ] = useState([])
 
@@ -66,29 +67,7 @@ const App = () => {
     getFollowers()
 },[])
 
-  //////
   const qs = require('qs')
-
-  //////////////////////////////////////
-
-  const [users, setUsers] = useState([])
-  const [comments, setComments] = useState([])
-  const [posts, setPosts] = useState([])
-  const [followers, setFollowers] = useState([])
-
-  useEffect(() => {
-    const getUsers = async () => {
-      const response = await axios.get('localhost:3001/users');
-      setUsers(response.data)
-      console.log(response.data)
-    }
-
-    getUsers()
-  },[]);
-
-
-////////////////////////////////////////////
-
 
   const getToken = async () => {
 
@@ -116,12 +95,12 @@ const App = () => {
   //   localStorage.clear()
   // }
   
-  // const checkToken = async () => {
-  //   const user = await CheckSession()
-  //   setUser(user)
-  //   toggleAuthenticated(true)
-  // }
-  // getToken()
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+    toggleAuthenticated(true)
+  }
+  getToken()
 
 
   ///////////////////////////////////////
