@@ -30,25 +30,6 @@ const GetAllUserFollowers = async (req, res) => {
   }
 }
 
-// const GetOneUserFollowers = async (req,res) => {
-//   try {
-//     let data = await Users.findByPk(req.params.user_id, {
-//       // where: {
-//       //   [Op.is]: req.params.user_id,
-//       // },
-//       include: [{
-//         model: Followers,
-//         as: 'followers',
-//         where: {
-//           [Op.is]: req.params.user_id,
-//         }
-//       }]
-//     })
-//     res.send(data)
-//   } catch (error) {
-//     throw error
-//   }
-// }
 
 const GetAllUserFollowing = async (req, res) => {
   try {
@@ -122,7 +103,6 @@ module.exports = {
   GetAllUsers,
   GetOneUser,
   GetAllUserFollowers,
-  // GetOneUserFollowers,
   GetAllUserFollowing,
   GetAllUserPosts,
   GetAllUserComments,

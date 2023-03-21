@@ -3,7 +3,6 @@ const controller = require('../controllers/UserController')
 
 Router.get('/', controller.GetAllUsers)
 Router.get('/followers', controller.GetAllUserFollowers)
-// Router.get('/followers/:user_id', controller.GetOneUserFollowers)
 Router.get('/following', controller.GetAllUserFollowing)
 Router.get('/posts', controller.GetAllUserPosts)
 Router.get('/comments', controller.GetAllUserComments)
