@@ -24,6 +24,49 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [ accessToken, setAccessToken ] = useState("")
   const [ songQueue, setSongQueue ] = useState([])
+
+  //////
+  const [users, setUsers] = useState(null)
+  const [comments, setComments] = useState(null)
+  const [posts, setPosts] = useState(null)
+  const [followers, setFollowers] = useState(null)
+
+  const BASE_URL = "http://localhost:3001"
+
+  useEffect(()=>{
+    const getUsers = async () => {
+        const response = await axios.get(`${BASE_URL}/users`)
+        console.log(response.data)
+        setUsers(response.data)
+    }
+    getUsers()
+},[])
+  useEffect(()=>{
+    const getComments = async () => {
+        const response = await axios.get(`${BASE_URL}/comments`)
+        console.log(response.data)
+        setComments(response.data)
+    }
+    getComments()
+},[])
+  useEffect(()=>{
+    const getPosts = async () => {
+        const response = await axios.get(`${BASE_URL}/posts`)
+        console.log(response.data)
+        setPosts(response.data)
+    }
+    getPosts()
+},[])
+  useEffect(()=>{
+    const getFollowers = async () => {
+        const response = await axios.get(`${BASE_URL}/followers`)
+        console.log(response.data)
+        setFollowers(response.data)
+    }
+    getFollowers()
+},[])
+
+  //////
   const qs = require('qs')
 
   //////////////////////////////////////
@@ -101,6 +144,8 @@ const App = () => {
   //     checkToken()
   //   }
   // }, [])
+
+   
 
 
   return (
