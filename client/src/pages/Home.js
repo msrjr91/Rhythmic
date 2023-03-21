@@ -1,15 +1,12 @@
 import { useNavigate } from 'react-router-dom'
-import { DataContext } from '../DataContext'
-// import { DataProvider} from '../DataProvider'
-import { useContext } from 'react'
-import React from 'react'
-import { useState, useEffect } from 'react'
-
-const Home = (props) => {
-import React, { useState, useEffect, useContext } from 'react'
 import { DataContext, LoginContext } from '../DataContext'
+import React from 'react'
+// import { DataProvider} from '../DataProvider'
+import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 
+
+const Home = (props) => {
   let navigate = useNavigate()
   const [comments, getComments] = useState([])
 
