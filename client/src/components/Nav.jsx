@@ -16,9 +16,9 @@ export default function Nav() {
                 </div>
             </div>
             <div className='nav-right'>
-                <Link className='nav-right-buttons' onClick={()=>navigate('/')}>Home</Link>
-                <Link className='nav-right-buttons' onClick={()=>navigate('/profile')}>Profile</Link>
-                <Link className='nav-right-buttons' onClick={()=>navigate('/signin')}>Sign in</Link>
+                <Link to='/' className='nav-right-buttons'> Home </Link>
+                <Link to='/profile'className='nav-right-buttons'> Profile </Link>
+                <Link to='/signin'className='nav-right-buttons'> Sign in </Link>
             </div>
         </div>
     )
