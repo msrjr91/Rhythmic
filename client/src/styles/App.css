@@ -1,5 +1,8 @@
-body{
-    background-color: rgb(26, 38, 41)
+
+  
+  body{
+    background-color: rgb(26, 38, 41);
+    margin-top: -250px;
 }
 
 .home-container{
@@ -36,16 +39,26 @@ button{
 }
 
 .registerbtn {
-    width: 350px;
+    width: 300px;
     height: 40px;
     text-align: center;
     justify-content: center;
+    border-radius: 80px;
+    background-color: rgb(210, 145, 76);
+    border: bold;
+    font-style: italic;
 }
 
+.profilebtn {
+margin-left: 1rem;
+}
+
+
 .signinbtn {
-    justify-content: right;
-    text-align: right;
-    margin-left: 1200px;
+    /* justify-content: right;
+    text-align: right; */
+    margin-left: 96%;
+    margin-right: 4rem;
 }
 
 .searchbar {
@@ -63,6 +76,9 @@ button{
     top: 0;
     left: 0;
     transform: translate(70%, 35%);
-    
-
+    margin-top: 0%;
 }
+
+/* .nav {
+    margin-top: -200px;
+} */

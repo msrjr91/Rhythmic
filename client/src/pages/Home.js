@@ -22,7 +22,7 @@ const Home = () => {
         <div className="feed"><h2>New Artists</h2></div>
       </div>
     </div>
-  )
+  ) 
 }
 
 export default Home

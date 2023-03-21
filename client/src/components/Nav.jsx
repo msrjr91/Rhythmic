@@ -4,8 +4,7 @@ import SearchBar from './SearchBar'
 export default function Nav() {
     let navigate = useNavigate()
     return (
-        <div>
-        <p>im nav</p>
+        <div className="nav">
 
         <button onClick={()=>navigate('/')}>Home</button>
 
