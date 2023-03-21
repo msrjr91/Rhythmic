@@ -1,6 +1,6 @@
 const { Posts } = require('../models')
 
-const GetPosts = async (req, res) => {
+const GetAllPosts = async (req, res) => {
   try {
     const posts = await Posts.findAll()
     res.send(posts)
@@ -9,39 +9,62 @@ const GetPosts = async (req, res) => {
   }
 }
 
-const CreatePost = async (req, res) => {
+const GetSinglePost = async (req,res) => {
   try {
-    const post = await Posts.create({ ...req.body })
+    // const post_id = parseInt(req.params.post_id)
+    let post = await Posts.findByPk(req.params.post_id)
     res.send(post)
+  } catch (error) {
+    throw error
+  }
+
+}
+
+const GetUserPosts = async (req,res) => {
+  try {
+    const posts = await Posts.findAll({
+      where: {
+        userId: req.params.user_id
+      }
+    })
+    res.send(posts)
   } catch (error) {
     throw error
   }
 }
 
-const UpdatePost = async (req, res) => {
+const CreatePost = async (req,res) => {
   try {
-    const post = await Posts.update(
-      { ...req.body },
-      { where: { id: req.params.post_id }, returning: true }
-    )
+    let userId = parseInt(req.params.user_id)
+    let postBody = {
+      userId,
+      ...req.body
+    }
+    let post = await Posts.create(postBody)
     res.send(post)
+  } catch (error) {
+    throw error
+  }
+} 
+
+//Not allowing post edits for the sake of being evil
+
+const DeletePost = async (req,res) => {
+  try {
+    let post_id = parseInt(req.params.post_id)
+    await Posts.destroy({where: {id: post_id}})
+    res.send({message: `Deleted post with id of ${post_id}`})
   } catch (error) {
     throw error
   }
 }
 
-const DeletePost = async (req, res) => {
-  try {
-    await Posts.destroy({ where: { id: req.params.post_id } })
-    res.send({ msg: 'Post Deleted', payload: req.params.post_id, status: 'Ok' })
-  } catch (error) {
-    throw error
-  }
-}
 
 module.exports = {
-  GetPosts,
+  GetAllPosts,
+  GetUserPosts,
+  GetSinglePost,
   CreatePost,
-  UpdatePost,
-  DeletePost
+  DeletePost,
+
 }
