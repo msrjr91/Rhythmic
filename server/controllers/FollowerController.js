@@ -4,62 +4,59 @@ const GetFollowers = async (req, res) => {
   try {
     const followers = await Followers.findAll()
     res.send(followers)
-  } catch (error) {
+  } 
+  catch (error) {
     throw error
   }
 }
 
-//RETURNS ALL OF USERID's FOLLOWERS: [1,2,...n] follows userId
+// RETURNS ALL OF USERID's FOLLOWERS: [1,2,...n] follows userId
 const GetFollowersByUser = async (req, res) => {
   try {
     const followers = await Followers.findAll({
-      where: {
-        userId: req.params.user_id
-      }
+      where: { userId: req.params.user_id }
     })
     res.send(followers)
-  } catch (error) {
+  } 
+  catch (error) {
     throw error
   }
 }
 
-//RETURNS ALL USERS THAT USERID FOLLOWS:  userId follows [1,2,...n]
+// RETURNS ALL USERS THAT USERID FOLLOWS:  userId follows [1,2,...n]
 const GetFollwersByFollower = async (req,res) => {
   try {
     const followers = await Followers.findAll({
-      where: {
-        followerId: req.params.follower_id
-      }
+      where: { followerId: req.params.follower_id }
     })
     res.send(followers)
-  } catch (error) {
+  } 
+  catch (error) {
     throw error
   }
 }
 
-//"I (FOLLOWER ID) WANT TO FOLLOW SOME USER (USER ID)"
+// "I (FOLLOWER ID) WANT TO FOLLOW SOME USER (USER ID)"
 const FollowUser = async (req,res) => {
   try {
     let followerId = parseInt(req.params.follower_id)
-    let followBody = {
-      followerId,
-      ...req.body
-    }
+    let followBody = { followerId, ...req.body }
     let follow = await Followers.create(followBody)
     res.send(follow)
-  } catch (error) {
+  } 
+  catch (error) {
     throw error
   }
 }
 
-// //REMOVE FOLLOW
+// // REMOVE FOLLOW
 // const UnfollowUser = async (req,res) => {
 //   try {
-//     //user you want to unfollow
+//     // user you want to unfollow
 //     let userId = parseInt(req.params.user_id)
-//     //
-//     await Followers.destroy({where: {userId: }})
-//   } catch (error) {
+//     await Followers.destroy({ where: {userId: }})
+//   } 
+//   catch (error) {
 //     throw error
 //   }
 // }
