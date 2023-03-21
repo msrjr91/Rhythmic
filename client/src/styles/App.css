@@ -6,7 +6,7 @@
 }
 
 .home-container{
-    background: rgb(153, 152, 152);
+    background: gray;
 }
 .home-feed{
     display: flex;
@@ -19,16 +19,13 @@
     height: 40vh;
     border: 2px solid black;
 }
-
 h2{
     text-align: center;
 }
-
 .welcome-signin{
     height: 30vh;
     justify-content: center;
 }
-
 button{
     /* max-width: 5vw; */
 }
@@ -55,10 +52,9 @@ margin-left: 1rem;
 
 
 .signinbtn {
-    /* justify-content: right;
-    text-align: right; */
-    margin-left: 96%;
-    margin-right: 4rem;
+    justify-content: right;
+    text-align: right;
+    margin-left: 1200px;
 }
 
 .searchbar {
@@ -72,11 +68,13 @@ margin-left: 1rem;
 }
 
 .logo {
+    display: center;
     transform: scale(.50);
     top: 0;
     left: 0;
     transform: translate(70%, 35%);
-    margin-top: 0%;
+    
+
 }
 
 /* .nav {
