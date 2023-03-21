@@ -41,6 +41,7 @@ const App = () => {
     }
     getUsers()
 },[])
+
   useEffect(()=>{
     const getComments = async () => {
         const response = await axios.get(`${BASE_URL}/comments`)
@@ -49,6 +50,7 @@ const App = () => {
     }
     getComments()
 },[])
+
   useEffect(()=>{
     const getPosts = async () => {
         const response = await axios.get(`${BASE_URL}/posts`)
@@ -106,6 +108,7 @@ const App = () => {
 
 
   ///////////////////////////////////////
+
   useEffect(()=>{
     async function checkToken() {
       if (accessToken === "") {
@@ -117,6 +120,7 @@ const App = () => {
     }
     checkToken()
   },[accessToken])
+
   //////////////////////////////////////
 
   // useEffect(()=>{
