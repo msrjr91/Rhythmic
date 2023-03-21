@@ -89,16 +89,6 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
   }
-
-  useEffect(() => {
-    const getUsers = async () => {
-      const response = await axios.get('localhost:3001/users');
-      setUsers(response.data)
-      console.log(response.data)
-    }
-
-    getUsers()
-  },[])
   
   // const handleLogOut = () => {
   //   //Reset all auth related state and clear localStorage
@@ -107,12 +97,12 @@ const App = () => {
   //   localStorage.clear()
   // }
   
-  const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
-    toggleAuthenticated(true)
-  }
-  getToken()
+  // const checkToken = async () => {
+  //   const user = await CheckSession()
+  //   setUser(user)
+  //   toggleAuthenticated(true)
+  // }
+  // getToken()
 
 
   ///////////////////////////////////////
@@ -140,7 +130,7 @@ const App = () => {
 
 
   return (
-    <DataContext.Provider value={{accessToken, setAccessToken, songQueue, setSongQueue }}>
+    <DataContext.Provider value={{users, setUsers, comments, setComments, posts, setPosts, followers, setFollowers, accessToken, setAccessToken, songQueue, setSongQueue }}>
     <div className="App">
       <section>
       <Nav
