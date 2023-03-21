@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import { Route, Routes } from 'react-router'
+import { Buffer } from 'buffer'
 import Nav from './components/Nav'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
@@ -7,40 +9,87 @@ import Feed from './pages/Feed'
 import Home from './pages/Home'
 import { CheckSession } from './services/auth'
 import './styles/App.css'
+import { DataContext } from './DataContext'
 
 import Profile from './pages/Profile'
+
+// const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+// const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
+const CLIENT_ID = "f547f29def344e27ab84bd34f57e77de"
+const CLIENT_SECRET = "d019c8515e95467fafda7e13566c058c"
+const auth_token = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`, 'utf-8').toString('base64')
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
+  const [ accessToken, setAccessToken ] = useState("")
+  const [ songQueue, setSongQueue ] = useState([])
+  const qs = require('qs')
 
-  const handleLogOut = () => {
-    //Reset all auth related state and clear localStorage
-    setUser(null)
-    toggleAuthenticated(false)
-    localStorage.clear()
-  }
-  
-  const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
-    toggleAuthenticated(true)
-  }
+  const getToken = async () => {
 
-  useEffect(()=>{
-    const token = localStorage.getItem('token')
-    if (token) {
-      checkToken()
+    try{
+      const token_url = "https://accounts.spotify.com/api/token"
+      const data = qs.stringify({'grant_type':'client_credentials'})
+
+      const response = await axios.post(token_url, data, {
+        headers: {
+          'Authorization': `Basic ${auth_token}`,
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      })
+      setAccessToken(response.data.access_token)
+    }catch(e){
+      console.log(e)
     }
-  }, [])
+  }
+
+
+  // const handleLogOut = () => {
+  //   //Reset all auth related state and clear localStorage
+  //   setUser(null)
+  //   toggleAuthenticated(false)
+  //   localStorage.clear()
+  // }
+  
+  // const checkToken = async () => {
+  //   const user = await CheckSession()
+  //   setUser(user)
+  //   toggleAuthenticated(true)
+  // }
+  // getToken()
+
+
+  ///////////////////////////////////////
+  useEffect(()=>{
+    async function checkToken() {
+      if (accessToken === "") {
+        console.log("No established token...getting token.")
+      getToken()
+      } else {
+        console.log("INITIAL TOKEN: ", accessToken)
+      }
+    }
+    checkToken()
+  },[accessToken])
+  //////////////////////////////////////
+
+  // useEffect(()=>{
+  //   const token = localStorage.getItem('token')
+  //   if (token) {
+  //     checkToken()
+  //   }
+  // }, [])
+
 
   return (
+    <DataContext.Provider value={{accessToken, setAccessToken, songQueue, setSongQueue }}>
     <div className="App">
       <section>
       <Nav
         authenticated={authenticated}
         user={user}
-        handleLogOut={handleLogOut}
+        // handleLogOut={handleLogOut}
       />
       </section>
       <main>
@@ -60,6 +109,7 @@ const App = () => {
         </Routes>
       </main>
     </div>
+    </DataContext.Provider>
   ) 
 }
 

@@ -12,7 +12,6 @@ const SearchBar = () => {
             <input type="text" onChange={e => setQuery(e.target.value)} />
 
             <button type='button' className="searchbtn"
-            // onClick={searchMeal}
             > Search </button>
 
 
