@@ -1,11 +1,11 @@
 const { Users, Posts, Comments, Followers } = require('../models')
-// const { Op } = require('sequelize')
 
 const GetAllUsers = async (req,res) => {
   try {
     const users = await Users.findAll()
     res.send(users)
-  } catch (error) {
+  } 
+  catch (error) {
     throw error
   }
 }
@@ -14,7 +14,8 @@ const GetOneUser = async (req,res) => {
   try {
     let user = await Users.findByPk(req.params.user_id)
     res.send(user)
-  } catch (error) {
+  } 
+  catch (error) {
     throw error
   }
 }
@@ -22,10 +23,15 @@ const GetOneUser = async (req,res) => {
 const GetAllUserFollowers = async (req, res) => {
   try {
     let data = await Users.findAll({
-      include: [{model: Users, as: 'followers', attributes: ['id', 'username']}]
+      include: [{
+        model: Users, 
+        as: 'followers', 
+        attributes: [ 'id', 'username' ]
+      }]
     })
     res.send(data)
-    } catch (error) {
+    } 
+    catch (error) {
       throw error;
   }
 }
@@ -34,10 +40,15 @@ const GetAllUserFollowers = async (req, res) => {
 const GetAllUserFollowing = async (req, res) => {
   try {
     let data = await Users.findAll({
-      include: [{model: Users, as: 'following', attributes: ['id', 'username']}]
+      include: [{
+        model: Users, 
+        as: 'following', 
+        attributes: [ 'id', 'username' ]
+      }]
     })
     res.send(data)
-    } catch (error) {
+    } 
+    catch (error) {
       throw error;
   }
 }
@@ -45,10 +56,13 @@ const GetAllUserFollowing = async (req, res) => {
 const GetAllUserPosts = async (req,res) => {
   try {
     let data = await Users.findAll({
-      include: [{model: Posts}]
+      include: [{ 
+        model: Posts 
+      }]
     })
     res.send(data)
-  } catch (error) {
+  } 
+  catch (error) {
     throw error
   }
 }
@@ -56,10 +70,13 @@ const GetAllUserPosts = async (req,res) => {
 const GetAllUserComments = async (req,res) => {
   try {
     let data = await Users.findAll({
-      include: [{model: Comments}]
+      include: [{
+        model: Comments
+      }]
     })
     res.send(data)
-  } catch (error){
+  } 
+  catch (error){
     throw error
   }
 }
@@ -71,7 +88,8 @@ const CreateUser = async (req,res) => {
     }
     let userEntry = await Users.create(userBody)
     res.send(userEntry)
-  } catch (error) {
+  } 
+  catch (error) {
     throw error
   } 
 }
@@ -80,11 +98,12 @@ const UpdateUser = async (req, res) => {
   try {
     let user_id = parseInt(req.params.user_id)
     let updatedUser = await Users.update(req.body, {
-      where: {id: user_id},
+      where: { id: user_id },
       returning: true
     })
     res.send(updatedUser)
-  } catch (error) {
+  } 
+  catch (error) {
     throw error
   }
 }
@@ -92,9 +111,12 @@ const UpdateUser = async (req, res) => {
 const DeleteUser = async (req,res) => {
   try {
     let user_id = parseInt(req.params.user_id)
-    await Users.destroy({where: {id: user_id}})
-    res.send({message: `Deleted user with an id of ${user_id}`})
-  } catch (error) {
+    await Users.destroy({
+      where: { id: user_id }
+    })
+    res.send({ message: `Deleted user with an id of ${user_id}` })
+  } 
+  catch (error) {
     throw error
   }
 }

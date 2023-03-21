@@ -6,7 +6,6 @@ Router.get('/', controller.GetFollowers)
 Router.get('/user/:user_id', controller.GetFollowersByUser)
 //RETURNS ALL USERS THAT USERID FOLLOWS:  userId follows [1,2,...n]
 Router.get('/follower/:follower_id', controller.GetFollwersByFollower)
-
 Router.post('/follower/:follower_id', controller.FollowUser)
 
 module.exports = Router
