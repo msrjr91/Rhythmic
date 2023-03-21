@@ -1,21 +1,18 @@
 {
   "development": {
-    "username": "mei",
-    "password": "0811",
+
     "database": "rhythmic_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "mei",
-    "password": "0811",
+
     "database": "rhythmic_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "mei",
-    "password": "0811",
+
     "database": "rhythmic_production",
     "host": "127.0.0.1",
     "dialect": "postgres"

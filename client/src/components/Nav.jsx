@@ -4,7 +4,8 @@ import SearchBar from './SearchBar'
 export default function Nav() {
     let navigate = useNavigate()
     return (
-        <div>
+        <div className="nav">
+
         <button onClick={()=>navigate('/')}>Home</button>
 
         <img className="logo" src="/images/rhythmic.png" alt="" />

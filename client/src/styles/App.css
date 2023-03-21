@@ -1,5 +1,8 @@
-body{
-    background-color: rgb(26, 38, 41)
+
+  
+  body{
+    background-color: rgb(26, 38, 41);
+    margin-top: -250px;
 }
 
 .home-container{
@@ -33,17 +36,25 @@ button{
 }
 
 .registerbtn {
-    width: 350px;
+    width: 300px;
     height: 40px;
     text-align: center;
     justify-content: center;
+    border-radius: 80px;
+    background-color: rgb(210, 145, 76);
+    border: bold;
+    font-style: italic;
 }
 
+.profilebtn {
+margin-left: 1rem;
+}
+
+
 .signinbtn {
-    /* justify-content: right;
-    text-align: right; */
-    margin-left: 96%;
-    min-width: 5vw;
+    justify-content: right;
+    text-align: right;
+    margin-left: 1200px;
 }
 
 .searchbar {
@@ -62,27 +73,10 @@ button{
     top: 0;
     left: 0;
     transform: translate(70%, 35%);
+    
 
 }
 
-.profile-body{
-    display: inline-grid;
-    column-gap: 32vw;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 1vh;
-}
-
-.profilefeed1{
-    height: 40vh;
-    width: 32vw;
-}
-.profilefeed2{
-    grid-column: 2;
-    grid-row: 2;
-    height: 20vh;
-    width: 32vw;
-}
-.profilefeed3{
-    height: 20vh;
-    width: 32vw;
-}
+/* .nav {
+    margin-top: -200px;
+} */
