@@ -146,10 +146,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signin" element=
-          {<SignIn  setUser={setUser}
-                    toggleAuthenticated={toggleAuthenticated}
-          />} />
+          <Route path="/signin" element={<SignIn setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
           <Route path="/register" element={<Register />} />
           <Route path="/feed" element=
           {<Feed  user={user}
