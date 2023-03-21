@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import { CheckSession } from './services/auth'
 import './styles/App.css'
 import { DataContext } from './DataContext'
+import { RegisterUser } from './services/auth'
 
 import Profile from './pages/Profile'
 
@@ -20,11 +21,15 @@ const CLIENT_SECRET = "d019c8515e95467fafda7e13566c058c"
 const auth_token = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`, 'utf-8').toString('base64')
 
 const App = () => {
-  const [authenticated, toggleAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
+  const [ authenticated, toggleAuthenticated ] = useState(false)
+  const [ user, setUser ] = useState(null)
   const [ accessToken, setAccessToken ] = useState("")
   const [ songQueue, setSongQueue ] = useState([])
   const qs = require('qs')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+  }
 
   const getToken = async () => {
 
@@ -52,12 +57,12 @@ const App = () => {
   //   localStorage.clear()
   // }
   
-  // const checkToken = async () => {
-  //   const user = await CheckSession()
-  //   setUser(user)
-  //   toggleAuthenticated(true)
-  // }
-  // getToken()
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+    toggleAuthenticated(true)
+  }
+  getToken()
 
 
   ///////////////////////////////////////
