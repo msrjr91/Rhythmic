@@ -1,5 +1,4 @@
 
-  
   body{
     background-color: rgb(26, 38, 41);
     margin-top: -250px;
@@ -39,10 +38,8 @@ button{
     width: 300px;
     height: 40px;
     text-align: center;
-    justify-content: center;
     border-radius: 80px;
     background-color: rgb(210, 145, 76);
-    border: bold;
     font-style: italic;
 }
 
