@@ -12,4 +12,3 @@ Router.use('/comments', CommentRouter)
 Router.use('/auth', AuthRouter)
 
 module.exports = Router
-
