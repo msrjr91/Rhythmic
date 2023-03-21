@@ -134,7 +134,7 @@ const App = () => {
 
 
   return (
-    <DataContext.Provider value={{accessToken, setAccessToken, songQueue, setSongQueue }}>
+    <DataContext.Provider value={{users, setUsers, comments, setComments, posts, setPosts, followers, setFollowers, accessToken, setAccessToken, songQueue, setSongQueue }}>
     <div className="App">
       <section>
       <Nav

@@ -6,11 +6,20 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 const Home = (props) => {
+import React, { useState, useEffect, useContext } from 'react'
+import { DataContext, LoginContext } from '../DataContext'
+import axios from 'axios'
 
   let navigate = useNavigate()
   const [comments, getComments] = useState([])
 
   console.log(props.getComments)
+  // const [comments, setComments] = useState([])
+  // setComments(DataContext.comments)
+  // useEffect(()=>{
+    
+  // },[])  
+
 
   return (
     <div className="home-container">
@@ -27,9 +36,7 @@ const Home = (props) => {
         </section>
       <div className="home-feed">
         <div className="feed"><h2>New Tracks</h2>
-          <p>
-          Reprehenderit quis ipsum sit aliqua culpa anim fugiat. Non minim eu nisi enim ut laborum. Irure ad deserunt enim cupidatat irure aliquip incididunt exercitation nisi incididunt adipisicing culpa voluptate duis.
-          </p>
+          
         </div>
 
 
@@ -49,13 +56,18 @@ const Home = (props) => {
 
         ))} */}
           
+        {/* <DataContext.Consumer>
+          {
+            comments.map((comment)=>(
+              <p>{comment.content}</p>
+            ))
+          }
+        </DataContext.Consumer> */}
         </div>
 
 
         <div className="feed"><h2>New Artists</h2>
-          <p>
-        Culpa laborum enim mollit mollit nostrud anim ea cillum cillum commodo tempor. Laborum culpa excepteur id minim amet aute reprehenderit. Exercitation fugiat esse esse cupidatat ipsum occaecat consectetur est labore culpa mollit. Aute pariatur pariatur sit ex nostrud quis commodo eiusmod eiusmod culpa. Sunt sunt culpa non mollit cupidatat adipisicing qui anim qui.
-          </p>
+          
         </div>
       </div>
     </div>
