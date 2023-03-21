@@ -41,6 +41,7 @@ const App = () => {
     }
     getUsers()
 },[])
+
   useEffect(()=>{
     const getComments = async () => {
         const response = await axios.get(`${BASE_URL}/comments`)
@@ -49,6 +50,7 @@ const App = () => {
     }
     getComments()
 },[])
+
   useEffect(()=>{
     const getPosts = async () => {
         const response = await axios.get(`${BASE_URL}/posts`)
@@ -89,16 +91,6 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
   }
-
-  useEffect(() => {
-    const getUsers = async () => {
-      const response = await axios.get('localhost:3001/users');
-      setUsers(response.data)
-      console.log(response.data)
-    }
-
-    getUsers()
-  },[])
   
   // const handleLogOut = () => {
   //   //Reset all auth related state and clear localStorage
@@ -107,15 +99,16 @@ const App = () => {
   //   localStorage.clear()
   // }
   
-  const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
-    toggleAuthenticated(true)
-  }
-  getToken()
+  // const checkToken = async () => {
+  //   const user = await CheckSession()
+  //   setUser(user)
+  //   toggleAuthenticated(true)
+  // }
+  // getToken()
 
 
   ///////////////////////////////////////
+
   useEffect(()=>{
     async function checkToken() {
       if (accessToken === "") {
@@ -127,6 +120,7 @@ const App = () => {
     }
     checkToken()
   },[accessToken])
+
   //////////////////////////////////////
 
   // useEffect(()=>{
