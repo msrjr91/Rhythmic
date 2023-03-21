@@ -130,8 +130,6 @@ const App = () => {
   //   }
   // }, [])
 
-   
-
 
   return (
     <DataContext.Provider value={{users, setUsers, comments, setComments, posts, setPosts, followers, setFollowers, accessToken, setAccessToken, songQueue, setSongQueue }}>
