@@ -1,6 +1,7 @@
 .App {
     text-align: center;
     background: rgb(20, 20, 20);
+    height: 100px;
 }
 
 .nav {
@@ -29,7 +30,8 @@
     margin: 20px;
     height: 20px;
     color: white;
-    text-decoration: none;
+    text-decoration: solid;
+    text-shadow: 0 0.188em 1.550em rgb(199, 157, 30);
 }
 
 .logo {
@@ -39,39 +41,111 @@
 }
 
 .registerbtn {
-    width: 150px;
-    height: 30px;
+    width: 200px;
+    height: 35px;
     text-align: center;
     border-radius: 80px;
-    background-color: rgb(177, 132, 85);
+    background-color: rgb(209, 150, 87);
     font-style: italic;
     font-size: 13px;
 }
 
 .feed {
-    width: 30vw;
-    height: 40vh;
-    border: 2px solid black;
-    overflow: automatic;
+    width: 375px;
+    border: 1px solid rgb(51, 51, 51);
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 700px;
+    padding: 10px
+}
+
+.feed h1 {
+    color: rgb(209, 150, 87);
+    text-decoration: underline;
+    font-size: 27px;
+}
+
+.feed h2 {
+    color: bisque;
+}
+
+.feed img {
+    border-radius: 50px;
+    box-shadow:0 0 .5em rgb(249, 247, 244);
+}
+
+.tracks-container p {
+    color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.comment-div p {
+    color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.signin-card {
+        background-color: white;
+        width: 40%;
+        height: 50%;
+        position: relative;
+        border-radius: 3em;
+        box-shadow: 0 0.188em 1.550em rgb(37, 105, 187);
+        display: inline-flex;
+        height: 75px;
+        margin-top: 10px;
+        padding-top: 15px;
 }
 
 
-
-
-/* body {
-    background-color: rgb(26, 38, 41);
-    margin-top: -250px;
+.input-wrapper {
+    color: rgb(174, 132, 25);
+    text-align: center;
+    display: inline-flex;
+    padding: .75rem;
 }
-*/
+
+.label {
+    text-align: center;
+    padding-right: 1rem;
+}
+
+.register-card {
+    background-color: white;
+    width: 40%;
+    height: 50%;
+    position: relative;
+    border-radius: 3em;
+    box-shadow: 0 0.188em 1.550em rgb(37, 105, 187);
+    display: inline-flex;
+    height: 250px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+
+body {
+    background-color: rgb(64, 93, 101);
+}
+
 
 .home-container {
-    background: gray;
+    background: rgb(64, 93, 101);
     height: 806px;
 }
 .home-feed {
     display: flex;
     justify-content: space-between;
 } 
+
+/* .profile-header {
+    padding: 25px 20px;
+    text-align: center;
+    max-width: 350px;
+    position: relative;
+    margin: 0 auto;  
+} */
+
 
 
 /* h2{

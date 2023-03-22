@@ -20,9 +20,9 @@ const SignIn = (props) => {
     navigate('/profile')
   } 
 
-  return (
-    <div className="signin col">
-      <div className="card-overlay centered">
+  return ( 
+    <div className="signin-card">
+      <div className="card-overlay-centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
             <label htmlFor="email">Email</label>
