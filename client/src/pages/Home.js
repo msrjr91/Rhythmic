@@ -68,7 +68,16 @@ const Home = (props) => {
   console.log("COMMENTS",comments)
 
   return (
+    
+      
     <div className="home-container">
+<<<<<<< HEAD
+    
+      <div className="home-feed">
+        <div className="feed">
+        <h1>Recently Posted Tracks</h1>
+          <div className="tracks-container">
+=======
         <div className="home-feed">
           <div className='sectionctn'>
         <div className="titles">
@@ -77,6 +86,7 @@ const Home = (props) => {
           <div className="feed">
 
             <div className="tracks-container">
+>>>>>>> e88b2bfb5621a3cc1e5306c16dfa3cd023c63c62
             {
               posts?.map((post)=>{
                 return(
@@ -98,6 +108,44 @@ const Home = (props) => {
                     Comment
                   </button>
                   </form>
+<<<<<<< HEAD
+                  </div>
+                )
+              })
+            }
+          </div>
+          </div>
+        
+
+            
+        <div className="feed">
+        <h1>Fresh Opinions</h1>
+          <div className='comments-container'>
+          {
+            comments?.map((comment,index) => {
+              return(
+                <div className="comment-div">
+                  
+                    <img src={commentUseravatar(comment)}/>
+                    <h3>{commentUser(comment)}</h3>
+                   <p> {comment['content']} </p>
+  
+                  
+                  <form className='comment-form'>
+                  <input 
+                    name="content"
+                    type="content"
+                    placeholder="What's your opinion?"
+                    onChange={handleChange}
+                    value={formValues.content}
+                    required
+                  />
+                  <button type='submit' disabled={!formValues.content}>
+                    Comment
+                  </button>
+                  </form>
+=======
+>>>>>>> e88b2bfb5621a3cc1e5306c16dfa3cd023c63c62
                 </div>
               )
             })
@@ -162,6 +210,34 @@ const Home = (props) => {
                 )
               })
             } */}
+<<<<<<< HEAD
+          </div>
+
+        </div>
+        
+            
+            {/* <h1>Fresh Opinions</h1> */}
+        <div className="feed">
+          <div className="artists-container">
+            <h1> New Artists </h1>
+            {
+              users?.map((user, index)=>{
+                if(user.isArtist === true){
+                  return (
+                  <h2>
+                    <img src={user['avatar']}/>
+                    {user.name}
+                  </h2>
+                  )
+                }
+              })
+            }
+          </div>
+          
+        </div>
+
+=======
+>>>>>>> e88b2bfb5621a3cc1e5306c16dfa3cd023c63c62
       </div>
       </div>
       </div>
@@ -186,7 +262,6 @@ const Home = (props) => {
           }
         </div>
       </div>
-    </div>
     </div>
     </div>
   ) 

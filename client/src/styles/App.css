@@ -54,15 +54,21 @@ body {
     font-size: 13px;
 }
 
+/* .titles {
+    display:grid
+} */
+
 .home-container {
     display: flex;
     flex-direction: column;
     background: rgb(64, 93, 101);
     height: 806px;
+    /* display: flex; */
 }
+
 .home-feed {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    /* justify-content: space-around; */
 } 
 
 .sectionctn {
