@@ -7,7 +7,6 @@ import axios from 'axios'
 import { ScrollView } from 'react'
 
 
-
 const Home = (props) => {
   let navigate = useNavigate()
   const { comments, getComments } = useContext(DataContext)

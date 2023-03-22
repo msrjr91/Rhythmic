@@ -12,7 +12,7 @@ module.exports = {
       let r = Math.floor(Math.random() * user.length)
       return {
       userId: user[r].id,
-      content: falso.randLine(),
+      content: falso.randPhrase(),
       trackId: falso.randUuid(),
       createdAt: new Date(),
       updatedAt: new Date()

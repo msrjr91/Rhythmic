@@ -15,7 +15,7 @@ module.exports = {
       return {
       userId: user[user_r].id,
       postId: post[post_r].id,
-      content: falso.randLine(),
+      content: falso.randParagraph(),
       createdAt: new Date(),
       updatedAt: new Date()
       }
