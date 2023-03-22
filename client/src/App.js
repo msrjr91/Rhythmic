@@ -22,7 +22,7 @@ const auth_token = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`, 'utf-8').toStrin
 
 const App = () => {
   const [ authenticated, toggleAuthenticated ] = useState(false)
-  const [ user, setUser ] = useState(null)
+  const [ user, setUser ] = useState({})
   const [ accessToken, setAccessToken ] = useState("")
   const [ songQueue, setSongQueue ] = useState([])
 
@@ -71,6 +71,8 @@ const App = () => {
   useEffect(()=>{
     console.log('the current user is ' + user)
   },[user])
+
+
 
   const qs = require('qs')
 
@@ -133,10 +135,10 @@ const App = () => {
   //     checkToken()
   //   }
   // }, [])
-
+ 
 
   return (
-    <DataContext.Provider value={{users, setUsers, comments, setComments, posts, setPosts, followers, setFollowers, accessToken, setAccessToken, songQueue, setSongQueue, user, authenticated, toggleAuthenticated }}>
+    <DataContext.Provider value={{users, setUsers, comments, setComments, posts, setPosts, followers, setFollowers, accessToken, setAccessToken, songQueue, setSongQueue, user, setUser, authenticated, toggleAuthenticated }}>
     <div className="App">
       <section>
       <Nav
