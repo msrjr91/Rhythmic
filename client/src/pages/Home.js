@@ -172,10 +172,10 @@ const Home = (props) => {
               users?.map((user, index)=>{
                 if(user.isArtist === true){
                   return (
-                  <h1>
+                  <h2>
                     <img src={user['avatar']}/>
                     {user.name}
-                  </h1>
+                  </h2>
                   )
                 }
               })
