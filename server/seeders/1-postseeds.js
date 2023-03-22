@@ -8,7 +8,7 @@ const falso = require('@ngneat/falso')
 module.exports = {
   async up (queryInterface, Sequelize) {
     let user = await Users.findAll({raw:true})
-    const posts = [...Array(100)].map(() => {
+    const posts = [...Array(10)].map(() => {
       let r = Math.floor(Math.random() * user.length)
       return {
       userId: user[r].id,

@@ -9,7 +9,7 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     let user = await Users.findAll({raw:true})
     let post = await Posts.findAll({raw:true})
-    const comments = [...Array(100)].map(() => {
+    const comments = [...Array(10)].map(() => {
       let user_r = Math.floor(Math.random() * user.length)
       let post_r = Math.floor(Math.random() * post.length)
       return {
