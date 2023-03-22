@@ -65,19 +65,18 @@ const Home = (props) => {
     }
   }
 
-
-
   console.log("COMMENTS",comments)
-
 
   return (
     <div className="home-container">
-      <div className="titles">
-      <h1>Recently Posted Tracks</h1>
-      <div className="home-feed">
+        <div className="home-feed">
+          <div className='sectionctn'>
+        <div className="titles">
+        <h1>Recently Posted Tracks</h1>
+      </div>
+          <div className="feed">
 
-        <div className="feed">
-          <div className="tracks-container">
+            <div className="tracks-container">
             {
               posts?.map((post)=>{
                 return(
@@ -99,46 +98,47 @@ const Home = (props) => {
                     Comment
                   </button>
                   </form>
-                  </div>
-                )
-              })
-            }
-          </div>
-          </div>
-        </div>
-
-            <div className="titles">
-            <h1>Fresh Opinions</h1>
-        <div className="feed">
-          <div className='comments-container'>
-          {
-            comments?.map((comment,index) => {
-              return(
-                <div className="comment-div">
-                  
-                    <img src={commentUseravatar(comment)}/>
-                    <h3>{commentUser(comment)}</h3>
-                   <p> {comment['content']} </p>
-  
-                  
-                  <form className='comment-form'>
-                  <input 
-                    name="content"
-                    type="content"
-                    placeholder="What's your opinion?"
-                    onChange={handleChange}
-                    value={formValues.content}
-                    required
-                  />
-                  <button type='submit' disabled={!formValues.content}>
-                    Comment
-                  </button>
-                  </form>
                 </div>
-              
               )
             })
           }
+        </div>
+      </div>
+      </div>
+      <div className='sectionctn'>
+      <div className="titles">
+        <h1>Fresh Opinions</h1>
+      </div>
+      <div className="feed">
+        <div className='comments-container'>
+        {
+          comments?.map((comment,index) => {
+            return(
+              <div className="comment-div">
+                
+                  <img src={commentUseravatar(comment)}/>
+                  <h3>{commentUser(comment)}</h3>
+                  <p> {comment['content']} </p>
+
+                
+                <form className='comment-form'>
+                <input 
+                  name="content"
+                  type="content"
+                  placeholder="What's your opinion?"
+                  onChange={handleChange}
+                  value={formValues.content}
+                  required
+                />
+                <button type='submit' disabled={!formValues.content}>
+                  Comment
+                </button>
+                </form>
+              </div>
+            )
+          })
+        }
+
             {/* {
               for(let i = 0; i < comments.length; i++)(
                 let avatar = "https://i.pravatar.cc/100"
@@ -147,8 +147,7 @@ const Home = (props) => {
                     <img src={avatar}/>
                     <p>{comment[i]['content']}</p>
                   </div>
-                ) 
-  )
+                ))
             } */}
             {/* {
               comments?.map((comment,index) => {
@@ -163,32 +162,31 @@ const Home = (props) => {
                 )
               })
             } */}
-          </div>
-
-        </div>
-        </div>
-            <div className="titles">
-            <h1>Up and Coming Artists</h1>
-        <div className="feed">
-          <div className="artists-container">
-            {
-              users?.map((user, index)=>{
-                if(user.isArtist === true){
-                  return (
-                  <h2>
-                    <img src={user['avatar']}/>
-                    {user.name}
-                  </h2>
-                  )
-                }
-              })
-            }
-          </div>
-          
-        </div>
-
       </div>
+      </div>
+      </div>
+      <div className='sectionctn'>
 
+      <div className="titles">
+        <h1>Up and Coming Artists</h1>
+      </div>
+      <div className="feed">
+        <div className="artists-container">
+          {
+            users?.map((user, index)=>{
+              if(user.isArtist === true){
+                return (
+                <h2>
+                  <img src={user['avatar']}/>
+                  {user.name}
+                </h2>
+                )
+              }
+            })
+          }
+        </div>
+      </div>
+    </div>
     </div>
     </div>
   ) 
@@ -223,7 +221,7 @@ export default Home
 
 
 
-  // // <section className="welcome-signin">
+  {/* // // <section className="welcome-signin"> */}
   // {/* <button className="signinbtn" onClick={() => navigate('/signin')}>
   //       Sign In
   //   </button> */}
