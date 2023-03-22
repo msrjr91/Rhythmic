@@ -2,13 +2,11 @@ export default function Profile(){
     
     return (
         <div>
-        <h1> this is a user profile </h1>
+        <img src={'https://i.pravatar.cc/100'}/>
         <section className="profile-header"> 
-            <figure style={{marginLeft: '10vw'}}>
-                <figcaption style={{color: 'white', textShadow: '0 0 10px purple'}}>
+                <h2 style={{color: 'white', textShadow: '0 0 10px purple'}}>
                     'Username'
-                </figcaption>
-            </figure>
+                </h2>
             <figure style={{marginLeft: '70vw'}}>
                 <figcaption style={{color: 'white', textShadow: '0 0 10px purple'}}>
                     'User' is listening to...

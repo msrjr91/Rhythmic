@@ -68,6 +68,10 @@ const App = () => {
     getFollowers()
 },[])
 
+  useEffect(()=>{
+    console.log('the current user is ' + user)
+  },[user])
+
   const qs = require('qs')
 
   const getToken = async () => {
@@ -132,7 +136,7 @@ const App = () => {
 
 
   return (
-    <DataContext.Provider value={{users, setUsers, comments, setComments, posts, setPosts, followers, setFollowers, accessToken, setAccessToken, songQueue, setSongQueue }}>
+    <DataContext.Provider value={{users, setUsers, comments, setComments, posts, setPosts, followers, setFollowers, accessToken, setAccessToken, songQueue, setSongQueue, user, authenticated, toggleAuthenticated }}>
     <div className="App">
       <section>
       <Nav
