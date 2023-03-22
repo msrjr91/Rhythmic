@@ -59,6 +59,8 @@ body {
 } */
 
 .home-container {
+    display: flex;
+    flex-direction: column;
     background: rgb(64, 93, 101);
     height: 806px;
     /* display: flex; */
@@ -68,6 +70,12 @@ body {
     display: grid;
     /* justify-content: space-around; */
 } 
+
+.sectionctn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .feed {
     width: 375px;
