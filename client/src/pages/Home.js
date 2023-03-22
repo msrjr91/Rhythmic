@@ -114,11 +114,11 @@ const Home = (props) => {
             comments?.map((comment,index) => {
               return(
                 <div className="comment-div">
-                  <p>
+                  
                     <img src={commentUseravatar(comment)}/>
                     <h3>{commentUser(comment)}</h3>
-                    {comment['content']}
-                  </p>
+                   <p> {comment['content']} </p>
+  
                   
                   <form className='comment-form'>
                   <input 

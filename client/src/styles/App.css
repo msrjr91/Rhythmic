@@ -56,14 +56,32 @@
     overflow: hidden;
     overflow-y: scroll;
     height: 700px;
+    padding: 10px
 }
 
 .feed h1 {
-    color: aliceblue;
+    color: rgb(209, 150, 87);
+    text-decoration: underline;
+    font-size: 27px;
 }
 
 .feed h2 {
     color: bisque;
+}
+
+.feed img {
+    border-radius: 50px;
+    box-shadow:0 0 .5em rgb(249, 247, 244);
+}
+
+.tracks-container p {
+    color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.comment-div p {
+    color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .signin-card {
