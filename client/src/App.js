@@ -11,6 +11,7 @@ import { CheckSession } from './services/auth'
 import './styles/App.css'
 import { DataContext } from './DataContext'
 import { RegisterUser } from './services/auth'
+import UpdateProfile from './pages/UpdateProfile'
 
 import Profile from './pages/Profile'
 
@@ -158,6 +159,7 @@ const App = () => {
           <Route path="/profile" element=
           {<Profile  user={user}
                   authenticated={authenticated}/>} />
+          <Route path="/update" element={<UpdateProfile user={user}/>}/>
         </Routes>
       </main>
     </div>

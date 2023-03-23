@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { UpdateUser } from '../services/auth.js'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
-const UpdateProfile = () => {
+const UpdateProfile = (props) => {
+  const URL = `http://localhost:3001/`
 
   let navigate = useNavigate()
 
@@ -19,7 +21,7 @@ const UpdateProfile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await UpdateUser({
+    await axios.put(`${URL}users/${props.user.user.id}`,{
       name: formValues.name,
       email: formValues.email,
       passwordInput: formValues.password,
