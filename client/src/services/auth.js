@@ -29,3 +29,12 @@ export const CheckSession = async () => {
     throw error
   }
 }
+
+export const UpdateUser = async(data) => {
+  try {
+    const res = await Client.get('/auth/update', data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
