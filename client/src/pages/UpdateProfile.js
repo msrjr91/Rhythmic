@@ -134,7 +134,7 @@ const UpdateProfile = (props) => {
             Update
           </button>
         </form>
-        <button onClick={deleteUser}>Delete Profile</button>
+        <button className="registerbtn" onClick={deleteUser}>Delete Profile</button>
       </div>
     </div>
   )

@@ -251,7 +251,7 @@ body {
 
 .profile-header {
     font-style: italic;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', 'serif';
     color: white;
     font-size: 20px;
     padding: 0%;
@@ -259,10 +259,12 @@ body {
 }
 
 .profile-body {
-        width: 100%;
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
         border: 1px solid rgb(51, 51, 51);
         overflow: hidden;
-        height: 100%;
+        height: fit-content;
         border-radius: 20px;
         box-shadow: 0 0 10px 3px rgba(60, 60, 60, 0.8);
         justify-content: space-around;
@@ -270,8 +272,8 @@ body {
 
 .profile-body-inner {
         overflow-y: scroll;
-        height: 800px;
-        width: 450px;
+        height: fit-content;
+        width: 40vw;
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.3);
 }
