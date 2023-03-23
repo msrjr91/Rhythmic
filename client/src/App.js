@@ -159,7 +159,7 @@ const App = () => {
           <Route path="/profile" element=
           {<Profile  user={user}
                   authenticated={authenticated}/>} />
-          <Route path="/update" element={<UpdateProfile user={user}/>}/>
+          <Route path="/update" element={<UpdateProfile user={user} toggleAuthenticated={toggleAuthenticated}/>}/>
         </Routes>
       </main>
     </div>

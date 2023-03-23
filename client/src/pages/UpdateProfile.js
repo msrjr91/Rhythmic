@@ -37,8 +37,16 @@ const UpdateProfile = (props) => {
       isArtist: '',
       avatar: ''
     })
+    props.toggleAuthenticated(false)
     navigate('/signin')
   }
+
+  const deleteUser = async() => {
+      await axios.delete(`${URL}users/${props.user.user.id}`)
+      props.toggleAuthenticated(false)
+      navigate('/signin')
+
+    }
 
   return (
     <div className="register-card">
@@ -126,6 +134,7 @@ const UpdateProfile = (props) => {
             Update
           </button>
         </form>
+        <button onClick={deleteUser}>Delete Profile</button>
       </div>
     </div>
   )
