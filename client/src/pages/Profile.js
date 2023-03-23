@@ -31,24 +31,59 @@ export default function Profile(){
         setFollowers(Array.from(response.data))
     }
 
-    // const posterAvatar = (post) => {
-    //     const userAvatar = users.find(user => user.id === post.userId)
-    //     if(userAvatar){
-    //       return userAvatar.avatar
-    //     } else {
-    //       return null
-    //     }
-    //   }
+    const followerAvatar = (follower) => {
+        const userAvatar = users.find(user => user.id === follower.followerId)
+        if(userAvatar){
+          return userAvatar.avatar
+        } else {
+          return null
+        }
+      }
     
-    // const posterName = (post) => {
-    //     const userName = users.find(user => user.id === post.userId)
-    //     if(userName){
-    //       return userName.username
-    //     } else {
-    //       return null
-    //     }
-    //   }
+    const followerName = (follower) => {
+        const userName = users.find(user => user.id === follower.followerId)
+        if(userName){
+          return userName.username
+        } else {
+          return null
+        }
+      }
 
+      const posterAvatar = (post) => {
+        const userAvatar = users.find(user => user.id === post.userId)
+        if(userAvatar){
+          return userAvatar.avatar
+        } else {
+          return null
+        }
+      }
+    
+      const posterName = (post) => {
+        const userName = users.find(user => user.id === post.userId)
+        if(userName){
+          return userName.username
+        } else {
+          return null
+        }
+      }
+    
+      const commentUser = (comment) => {
+        const userName = users.find(user => user.id === comment.userId)
+        if(userName){
+          return userName.username
+        } else {
+          return null
+        }
+      }
+    
+      const commentUseravatar = (comment) => {
+        const userAvatar = users.find(user => user.id === comment.userId)
+        if(userAvatar){
+          return userAvatar.avatar
+        } else {
+          return null
+        }
+      }
     // const getFollowerInfo = async () => {
     //     console.log('working')
     //     const requests = await followers?.map((follower) => axios.get(URL + 'users/' + follower.followerId))
@@ -120,11 +155,11 @@ export default function Profile(){
                 (allUsers && followers)?
                 <div className='profilefeed1' style={{border: '2px solid white'}}>Following/Liked Artists/Fans
                 {
-                    allUsers.map((user)=>{
+                    followers.map((follower)=>{
                         return (
-                        <div key={user.id}>
-                            <img src={user.avatar}/>
-                            <h6>{user.name}</h6>
+                        <div key={follower.id}>
+                            <img src={followerAvatar(follower)}/>
+                            <h6>{followerName(follower)}</h6>
                         </div>
                     )
                     })
@@ -139,6 +174,8 @@ export default function Profile(){
                         // console.log(post.content)
                         return (
                         <div key={post.id}>
+                            <img src={posterAvatar(post)}/>
+                            <h6>{posterName(post)}</h6>
                             <p>{post.content}</p>
                         </div>
                         )
@@ -153,7 +190,13 @@ export default function Profile(){
                 {
                 comments.map((comment)=>{
                     console.log(comment.content)
-                    return (<p key={comment.id}>{comment.content}</p>)
+                    return (
+                    <div key={comment.id}>
+                        <img src={commentUseravatar(comment)}/>
+                        <h6>{commentUser(comment)}</h6>
+                        <p>{comment.content}</p>
+                    </div>
+                    )
                     })
                 }
                 </div>:null
