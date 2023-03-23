@@ -15,11 +15,11 @@ const SignIn = (props) => {
     e.preventDefault()
     const payload = await SignInUser(formValues)
     setFormValues({ email: '', passwordInput: '' })
-    props.setUser(JSON.stringify(payload))
+    props.setUser(payload)
     props.toggleAuthenticated(true)
     navigate('/profile')
   } 
-
+ 
   return ( 
     <div className="signin-card">
       <div className="card-overlay-centered">

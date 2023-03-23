@@ -32,7 +32,7 @@ const App = () => {
   const [followers, setFollowers] = useState(null)
 
   const BASE_URL = "http://localhost:3001"
-
+ 
   useEffect(()=>{
     const getUsers = async () => {
         const response = await axios.get(`${BASE_URL}/users`)
@@ -69,7 +69,7 @@ const App = () => {
 },[])
 
   useEffect(()=>{
-    console.log('the current user is ' + user)
+    console.log(user)
   },[user])
 
 
