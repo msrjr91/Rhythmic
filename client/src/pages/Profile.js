@@ -135,15 +135,15 @@ export default function Profile(){
     },[user])
     
     return user && comments && posts && allUsers ? (
-        <div>
+        <div className="profile">
         <img src={'https://i.pravatar.cc/100'}/>
         <section className="profile-header"> 
-                <h2 style={{color: 'white', textShadow: '0 0 10px purple'}}>
+                <h2 style={{color: 'white'}}>
                   {profileUser.username} / {profileUser.name}
                 </h2>
                 <button onClick={() => navigate('/update')}>Update Profile</button>
             <figure style={{marginLeft: '70vw'}}>
-                <figcaption style={{color: 'white', textShadow: '0 0 10px purple'}}>
+                <figcaption style={{color: 'white'}}>
                     Currently listening to..
                 </figcaption>
                 <audio controls src='null'/>
@@ -151,6 +151,7 @@ export default function Profile(){
         </section>
 
         <section className="profile-body">
+          <div className="profile-body-inner">
             {
                 (allUsers && followers)?
                 <div className='profilefeed1' style={{border: '2px solid white'}}>Following/Liked Artists/Fans
@@ -202,6 +203,7 @@ export default function Profile(){
                 </div>:null
             }
             
+            </div>
         </section>
         </div>
     ) : <div>Please Log In</div>
