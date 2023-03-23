@@ -136,12 +136,12 @@ export default function Profile(){
     
     return user && comments && posts && allUsers ? (
         <div className="profile">
-        <img src={'https://i.pravatar.cc/100'}/>
+        <img src={profileUser.avatar}/>
         <section className="profile-header"> 
                 <h2 style={{color: 'white'}}>
                   {profileUser.username} / {profileUser.name}
                 </h2>
-                <button onClick={() => navigate('/update')}>Update Profile</button>
+                <button className="registerbtn" onClick={() => navigate('/update')}>Update Profile</button>
             <figure style={{marginLeft: '70vw'}}>
                 <figcaption style={{color: 'white'}}>
                     Currently listening to..
@@ -167,6 +167,10 @@ export default function Profile(){
                 }
                 </div>:null
             }
+            </div>
+           
+            
+            <div className="profile-body-inner">
                 {
                     (posts)?
                     <div className='profilefeed2' style={{border: '2px solid white'}}>Albums/Songs/Playlists
@@ -204,8 +208,9 @@ export default function Profile(){
             }
             
             </div>
-        </section>
+            </section>
         </div>
+        
     ) : <div>Please Log In</div>
 }
 
