@@ -14,7 +14,7 @@ app.use(logger('dev'))
 app.get('/', (req, res) => {
     res.send('Server Running')
   })
-
+  
 app.use('/', AppRouter)
 
 app.listen(PORT, () => console.log(`Server Running On ${PORT}`))
