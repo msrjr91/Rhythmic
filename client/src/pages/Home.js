@@ -74,8 +74,8 @@ const Home = (props) => {
         <div className="titles">
         <h1>Recently Posted Tracks</h1>
       </div>
-          <div className="feed">
-
+          <div className="feed-outer">
+          <div className="feed-inner">
             <div className="tracks-container">
             {
               posts?.map((post)=>{
@@ -105,11 +105,16 @@ const Home = (props) => {
         </div>
       </div>
       </div>
+      </div>
+
+
+
       <div className='sectionctn'>
       <div className="titles">
         <h1>Fresh Opinions</h1>
       </div>
-      <div className="feed">
+      <div className="feed-outer">
+        <div className="feed-inner">
         <div className='comments-container'>
         {
           comments?.map((comment,index) => {
@@ -165,12 +170,19 @@ const Home = (props) => {
       </div>
       </div>
       </div>
+      </div>
+
+
+
+
+
       <div className='sectionctn'>
 
       <div className="titles">
         <h1>Up and Coming Artists</h1>
       </div>
-      <div className="feed">
+      <div className="feed-outer">
+        <div className="feed-inner">
         <div className="artists-container">
           {
             users?.map((user, index)=>{
@@ -186,6 +198,7 @@ const Home = (props) => {
           }
         </div>
       </div>
+    </div>
     </div>
     </div>
     </div>

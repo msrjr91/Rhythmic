@@ -35,7 +35,6 @@ body {
     height: 20px;
     color: white;
     text-decoration: solid;
-    text-shadow: 0 0.188em 1.550em rgb(199, 157, 30);
 }
 
 .logo {
@@ -69,15 +68,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.feed {
-    width: 375px;
+.feed-outer {
+    width: 450px;
     border: 1px solid rgb(51, 51, 51);
     overflow: hidden;
+    height: 800px;
+    border-radius: 20px;
+    box-shadow: 0 0 7px 1px rgba(60, 60, 60, 0.8);
+}
+
+.feed-inner {
     overflow-y: scroll;
-    height: 700px;
-    padding: 10px
+    height: 800px;
+    width: 450px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .feed h1 {
@@ -90,19 +99,108 @@ body {
     color: bisque;
 }
 
-.feed img {
+.feed-inner img {
     border-radius: 50%;
-    box-shadow:0 0 .5em rgb(249, 247, 244);
+    /* justify-content: left;
+    display: flex;
+    align-items: center; */
+    /* box-shadow:0 0 .5em rgb(249, 247, 244); */
+}
+
+.titles h1 {
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
 }
 
 .tracks-container p {
-    color: aliceblue;
+    color: black;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.post-div {
+    border-bottom: 3px solid black;
+    overflow: auto;
+    overflow-y: scroll;
+    height: 200px;
+    padding: 20px;
+    width: 90%;
+    /* background: rgba(255, 255, 255, 0.3); */
+}
+
+.post-div::-webkit-scrollbar {
+    display: none;
+}
+
+.post-div img {
+    height: 100px;
+    box-shadow:0 0 .5em rgb(249, 247, 244);
+}
+
+.post-div h3 {
+    font-size: 12px;
+    color: rgb(217, 173, 53);
+}
+
+.comment-div {
+    border-bottom: 3px solid black;
+    overflow-y: scroll;
+    overflow: auto;
+    height: 200px;
+    padding: 20px;
+    width: 90%;
+}
+
+.comment-div::-webkit-scrollbar {
+    display: none;
+}
+
 .comment-div p {
-    color: aliceblue;
+    color: black;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: right;
+    padding-left: 110px;
+    justify-content: right;
+    /* display: flex; */
+    margin: 0%;
+    vertical-align:top
+
+}
+
+.comment-div img {
+    height: 80px;
+    box-shadow:0 0 .5em rgb(249, 247, 244);
+    justify-content: left;
+    display: flex;
+
+}
+
+.comment-div h3 {
+    font-size: 10px;
+    color: rgb(217, 173, 53);
+    display: flex;
+    justify-content: left;
+}
+
+
+.artists-container {
+    padding-left: 20px;
+    /* background: rgba(255, 255, 255, 0.3); */
+    text-align: center;
+
+}
+
+.artists-container img {
+    box-shadow:0 0 .5em rgb(249, 247, 244);
+    margin: auto;
+    display: block;
+    /* display: grid;
+    justify-items: center; */
+}
+
+.artists-container h2 {
+    color: rgb(217, 173, 53);
+    text-align: center;
 }
 
 .signin-card {
@@ -111,7 +209,7 @@ body {
         height: 50%;
         position: relative;
         border-radius: 3em;
-        box-shadow: 0 0.188em 1.550em rgb(37, 105, 187);
+        box-shadow: 0 0.100em 1em rgb(180, 197, 218);
         display: inline-flex;
         height: 75px;
         margin-top: 10px;
@@ -120,8 +218,9 @@ body {
 
 
 .input-wrapper {
-    color: rgb(174, 132, 25);
+    color: rgb(105, 79, 13);
     text-align: center;
+    text-decoration: solid;
     display: inline-flex;
     padding: .75rem;
 }
@@ -137,7 +236,7 @@ body {
     height: 50%;
     position: relative;
     border-radius: 3em;
-    box-shadow: 0 0.188em 1.550em rgb(37, 105, 187);
+    box-shadow: 0 0.1em 1em rgb(180, 197, 218);
     display: inline-flex;
     height: 250px;
     margin-top: 10px;
