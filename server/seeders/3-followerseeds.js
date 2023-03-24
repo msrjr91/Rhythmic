@@ -1,7 +1,9 @@
 'use strict'
+
 const { Users } = require('../models')
+
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
+  async up (queryInterface, Sequelize) {
     const users = await Users.findAll({ raw: true })
     const followers = users
       .map(({ id }) => ({
@@ -14,10 +16,9 @@ module.exports = {
         updatedAt: new Date()
       }))
       .filter((u) => u.followerId !== null)
-    await queryInterface.bulkInsert('followers', followers)
+    return queryInterface.bulkInsert('followers', followers)
   },
-
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('followers')
+  async down (queryInterface, Sequelize) {
+    return queryInterface.bulkDelete('followers')
   }
 }

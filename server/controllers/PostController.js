@@ -53,8 +53,6 @@ const CreatePost = async (req,res) => {
   }
 } 
 
-// Not allowing post edits for the sake of being evil
-
 const DeletePost = async (req,res) => {
   try {
     let post_id = parseInt(req.params.post_id)

@@ -1,9 +1,7 @@
 'use strict'
 
-const { Users, sequelize } = require('../models')
+const { Users } = require('../models')
 const falso = require('@ngneat/falso')
-
-
 
 module.exports = {
   async up (queryInterface, Sequelize) {
