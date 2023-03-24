@@ -119,12 +119,6 @@ export default function Profile(){
           <h2 style={{color: 'white'}}>
             {profileUser.username} / {profileUser.name}
           </h2>
-          <figure style={{marginLeft: '70vw'}}>
-            <figcaption style={{color: 'white'}}>
-              Currently listening to..
-            </figcaption>
-            <audio controls src='null'/>
-          </figure>
                 <button className="registerbtn" onClick={() => navigate('/update')}>Update Profile</button>
         </section>
         <section className="profile-body">
@@ -145,9 +139,7 @@ export default function Profile(){
                 }
                 </div>:null
             }
-            </div>
-           
-            
+          </div>
             <div className="profile-body-inner">
                 <h3>Posts</h3>
                 {
