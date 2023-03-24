@@ -5,6 +5,7 @@ import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { ScrollView } from 'react'
+import tracks from '../assets/songs'
 
 
 const Home = (props) => {
@@ -17,17 +18,6 @@ const Home = (props) => {
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
-
-  // const [ avatars, setAvatars ] = useState([])
-  //
-  // const getCommentAvatars = () => {
-  //   for(let i = 0; i < comments.length; i++){
-  //     setAvatars(avatars=>[...avatars, "https://i.pravatar.cc/100"])
-
-  //     //axios call for each comment's userId
-  //     //setAvatars based on comment userId's avatar
-  // }}
-  // getCommentAvatars()
 
   const posterAvatar = (post) => {
     const userAvatar = users.find(user => user.id === post.userId)
@@ -64,6 +54,14 @@ const Home = (props) => {
       return null
     }
   }
+  const song = (post) => {
+    const postSong = tracks.find(track => track.postId === post.id)
+    if(postSong){
+        return postSong.song
+    } else {
+        return null
+    }
+}
 
   console.log("COMMENTS",comments)
 
@@ -83,6 +81,7 @@ const Home = (props) => {
                   <div className='post-div'>
                   <img src={posterAvatar(post)}/>
                   <h3>{posterName(post)}</h3>
+                  <audio controls src={song(post)}/>
                   <p>{post['content']}</p>
 
                   <form className='comment-form'>
@@ -143,30 +142,6 @@ const Home = (props) => {
             )
           })
         }
-
-            {/* {
-              for(let i = 0; i < comments.length; i++)(
-                let avatar = "https://i.pravatar.cc/100"
-                return (
-                  <div className="comment-div">
-                    <img src={avatar}/>
-                    <p>{comment[i]['content']}</p>
-                  </div>
-                ))
-            } */}
-            {/* {
-              comments?.map((comment,index) => {
-                // let avatar = "https://i.pravatar.cc/100"
-                return(
-                  <div className="comment-div">
-                    <img src={comment['avatar']}/>
-                    <p>{comment['content']}</p>
-                  </div>
-
-                  
-                )
-              })
-            } */}
       </div>
       </div>
       </div>
@@ -189,7 +164,7 @@ const Home = (props) => {
               if(user.isArtist === true){
                 return (
                 <h2>
-                  <img src={user['avatar']}/>
+                  <img style={{width: '7vw'}} src={user['avatar']}/>
                   {user.name}
                 </h2>
                 )
@@ -207,41 +182,3 @@ const Home = (props) => {
 
 export default Home
 
-
-
-
-        // {/* {props.getComments.map((comments) => (
-
-        //   <div className="comment-feed">
-        //     <DataProvider>
-        // <DataContext.Consumer>
-        //     {(context) => (
-        //         <h1>{comments.content}</h1>
-        //     )}
-        // </DataContext.Consumer>
-        //    </DataProvider>
-        //   </div>
-
-        // ))} */}
-          
-        // {/* <DataContext.Consumer>
-        //   {
-        //     comments.map((comment)=>(
-        //       <p>{comment.content}</p>
-        //     ))
-        //   }
-        // </DataContext.Consumer> */}
-
-
-
-  {/* // // <section className="welcome-signin"> */}
-  // {/* <button className="signinbtn" onClick={() => navigate('/signin')}>
-  //       Sign In
-  //   </button> */}
-  //   {/* <div className="register">
-  //     <button className="registerbtn" onClick={() => navigate('/register')}>What's Your Rhythm?</button>
-  //   </div> */}
-  //   {/* <div>
-  //     <button className="profilebtn" onClick={() => navigate('/profile')}>Profile</button>
-  //   </div> */}
-  //   {/* </section> */}

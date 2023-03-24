@@ -51,6 +51,8 @@ body {
     background-color: rgb(209, 150, 87);
     font-style: italic;
     font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 2vh;
 }
 
 .home-container {
@@ -187,7 +189,8 @@ body {
     padding-left: 20px;
     /* background: rgba(255, 255, 255, 0.3); */
     text-align: center;
-
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .artists-container img {
@@ -277,3 +280,9 @@ body {
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.3);
 }
+
+.profilefeed1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
