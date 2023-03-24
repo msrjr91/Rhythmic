@@ -52,6 +52,8 @@
   background-color: rgb(216, 161, 103);
   font-style: italic;
   font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 2vh;
 }
 
 .registerbtn:hover {
@@ -236,7 +238,8 @@
 .artists-ctn {
     padding-left: 20px;
     text-align: center;
-
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .artists-ctn img {
@@ -324,3 +327,9 @@
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.3);
 }
+
+.profilefeed1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+

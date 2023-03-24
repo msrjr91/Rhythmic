@@ -1,5 +1,9 @@
 import React, { useState, useContext } from 'react'
 import { DataContext } from '../DataContext'
+import React from 'react'
+// import { DataProvider} from '../DataProvider'
+import { useState, useContext } from 'react'
+import tracks from '../assets/songs'
 
 export default function Home(props) {
   const { comments, users, posts } = useContext(DataContext)
@@ -49,6 +53,14 @@ export default function Home(props) {
       return null
     }
   }
+  const song = (post) => {
+    const postSong = tracks.find(track => track.postId === post.id)
+    if(postSong){
+        return postSong.song
+    } else {
+        return null
+    }
+}
 
   // Test Comments
   // console.log("COMMENTS",comments)
@@ -72,6 +84,7 @@ export default function Home(props) {
                     <h3 className='p-artist'> {posterName(post)} </h3>
                   </div>
                   <div className='track-content'>
+                    <audio controls src={song(post)}/>
                     <p> {post['content']} </p>
                     <form className='comment-form'>
                       <input 
