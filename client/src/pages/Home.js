@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { DataContext } from '../DataContext'
-import React from 'react'
 // import { DataProvider} from '../DataProvider'
-import { useState, useContext } from 'react'
 import tracks from '../assets/songs'
 
 export default function Home(props) {
@@ -80,12 +78,13 @@ export default function Home(props) {
                   <div className='track-artist'>
                     <div className='track-img-ctn'>
                       <img src={posterAvatar(post)} className='track-poster-img'/>
+                      <h3 className='p-artist'> {posterName(post)} </h3>
                     </div>
-                    <h3 className='p-artist'> {posterName(post)} </h3>
+                    <div className='track-content'>
+                      <p> {post['content']} </p>
+                      <audio controls src={song(post)} className='music-player'/>
+                    </div>
                   </div>
-                  <div className='track-content'>
-                    <audio controls src={song(post)}/>
-                    <p> {post['content']} </p>
                     <form className='comment-form'>
                       <input 
                         name='content'
@@ -96,7 +95,6 @@ export default function Home(props) {
                         required/>
                       <button type='submit' disabled={!formValues.content}> Comment </button>
                     </form>
-                  </div>
                 </div>
               )
             })
