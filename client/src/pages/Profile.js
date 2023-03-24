@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { DataContext } from '../DataContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import tracks from '../assets/songs'
 
 export default function Profile(){
     let navigate = useNavigate()
@@ -84,33 +85,14 @@ export default function Profile(){
           return null
         }
       }
-    // const getFollowerInfo = async () => {
-    //     console.log('working')
-    //     const requests = await followers?.map((follower) => axios.get(URL + 'users/' + follower.followerId))
-    //     console.log(requests)
-    //     const requestResp = await axios.all(requests)?.then((responses) => {
-    //         console.log(responses)
-    //         responses.forEach((resp) => {
-    //             console.log(resp.data)
-    //             setFollowerInfo(followerInfo => [...followerInfo, resp.data])
-    //         })
-    //     })
-    //     console.log(requestResp)
-    // }
-    // console.log(followerInfo)
-
-    // const uniqueArr = followerInfo.filter((item, index) => {
-    //     return index === followerInfo.findIndex(obj => {
-    //       return JSON.stringify(obj) === JSON.stringify(item);
-    //     });
-    //   });
-
-    // const cleanArray = followerInfo.reduce((unique, o) => {
-    //     if(!unique.some(obj => obj.id === o.id)) {
-    //       unique.push(o);
-    //     } 
-    //     return unique;
-    // },[]);
+      const song = (post) => {
+        const postSong = tracks.find(track => track.postId === post.id)
+        if(postSong){
+            return postSong.song
+        } else {
+            return null
+        }
+    }
 
     const getComments = async () => {
         const response = await axios.get(`${URL}comments/user/${user.user.id}`)
@@ -142,24 +124,19 @@ export default function Profile(){
                   {profileUser.username} / {profileUser.name}
                 </h2>
                 <button className="registerbtn" onClick={() => navigate('/update')}>Update Profile</button>
-            <figure style={{marginLeft: '70vw'}}>
-                <figcaption style={{color: 'white'}}>
-                    Currently listening to..
-                </figcaption>
-                <audio controls src='null'/>
-            </figure> 
         </section>
 
         <section className="profile-body">
           <div className="profile-body-inner">
+            <h3>Followers</h3>
             {
                 (allUsers && followers)?
-                <div className='profilefeed1' style={{border: '2px solid white'}}>Following/Liked Artists/Fans
+                <div className='profilefeed1'>
                 {
                     followers.map((follower)=>{
                         return (
                         <div key={follower.id}>
-                            <img src={followerAvatar(follower)}/>
+                            <img style={{width: '5vw'}} src={followerAvatar(follower)}/>
                             <h6>{followerName(follower)}</h6>
                         </div>
                     )
@@ -171,16 +148,17 @@ export default function Profile(){
            
             
             <div className="profile-body-inner">
+                <h3>Posts</h3>
                 {
                     (posts)?
-                    <div className='profilefeed2' style={{border: '2px solid white'}}>Albums/Songs/Playlists
+                    <div className='profilefeed2'>
                     {
                     posts.map((post)=>{
-                        // console.log(post.content)
                         return (
                         <div key={post.id}>
                             <img src={posterAvatar(post)}/>
                             <h6>{posterName(post)}</h6>
+                            <audio controls src={song(post)}/>
                             <p>{post.content}</p>
                         </div>
                         )
@@ -191,7 +169,7 @@ export default function Profile(){
             
             {
                 (comments)?
-                <div className='profilefeed3' style={{border: '2px solid white'}}>
+                <div className='profilefeed3'>
                 {
                 comments.map((comment)=>{
                     console.log(comment.content)
