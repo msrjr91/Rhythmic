@@ -28,10 +28,10 @@ export default function App() {
   const [ accessToken, setAccessToken ] = useState('')
   const [ songQueue, setSongQueue ] = useState([])
 
-  const [users, setUsers] = useState(null)
-  const [comments, setComments] = useState(null)
-  const [posts, setPosts] = useState(null)
-  const [followers, setFollowers] = useState(null)
+  const [ users, setUsers ] = useState(null)
+  const [ comments, setComments ] = useState(null)
+  const [ posts, setPosts ] = useState(null)
+  const [ followers, setFollowers ] = useState(null)
 
   // Required modules
   const qs = require('qs')
