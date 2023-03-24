@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { UpdateUser } from '../services/auth.js'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 

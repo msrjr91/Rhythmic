@@ -1,4 +1,4 @@
-const { Users, Posts, Comments, Followers } = require('../models')
+const { Users, Posts, Comments } = require('../models')
 
 const GetAllUsers = async (req,res) => {
   try {
@@ -35,7 +35,6 @@ const GetAllUserFollowers = async (req, res) => {
       throw error;
   }
 }
-
 
 const GetAllUserFollowing = async (req, res) => {
   try {

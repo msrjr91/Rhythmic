@@ -9,11 +9,7 @@ export default function Profile(){
     const {user} = useContext(DataContext)
     const {users} = useContext(DataContext)
     const [followers, setFollowers] = useState(null)
-    const [userFollowers, setUserFollowers] = useState(null)
-    const [avatars, setAvatars] = useState([])
     const [allUsers, setAllUsers] = useState(null)
-    // 
-    const [followerInfo, setFollowerInfo] = useState([])
 
     const [profileUser, setProfileUser] = useState(null)
     const [comments, setComments] = useState(null)
@@ -120,12 +116,17 @@ export default function Profile(){
         <div className="profile">
         <img src={profileUser.avatar}/>
         <section className="profile-header"> 
-                <h2 style={{color: 'white'}}>
-                  {profileUser.username} / {profileUser.name}
-                </h2>
+          <h2 style={{color: 'white'}}>
+            {profileUser.username} / {profileUser.name}
+          </h2>
+          <figure style={{marginLeft: '70vw'}}>
+            <figcaption style={{color: 'white'}}>
+              Currently listening to..
+            </figcaption>
+            <audio controls src='null'/>
+          </figure>
                 <button className="registerbtn" onClick={() => navigate('/update')}>Update Profile</button>
         </section>
-
         <section className="profile-body">
           <div className="profile-body-inner">
             <h3>Followers</h3>
