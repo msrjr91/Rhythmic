@@ -141,7 +141,7 @@ export default function Profile(){
                 <h2 style={{color: 'white'}}>
                   {profileUser.username} / {profileUser.name}
                 </h2>
-                <button className="registerbtn" onClick={() => navigate('/update')}>Update Profile</button>
+                <button className="registerbtn" onClick={() => navigate('/profile/update')}>Update Profile</button>
             <figure style={{marginLeft: '70vw'}}>
                 <figcaption style={{color: 'white'}}>
                     Currently listening to..

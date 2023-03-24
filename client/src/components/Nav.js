@@ -9,7 +9,7 @@ export default function Nav() {
   const {authenticated, toggleAuthenticated} = useContext(DataContext)
 
   return (
-    <div className="nav">
+    <div className="Nav">
       <div className='nav-left'>
         <SearchBar />
       </div>
@@ -22,11 +22,13 @@ export default function Nav() {
         </div>
       </div>
       <div className='nav-right'>
-        <Link to='/' className='nav-right-buttons'> Home </Link>
-        <Link to='/profile'className='nav-right-buttons'> Profile </Link>
-        {
-          (!authenticated) ? <Link to='/signin' className='nav-right-buttons'> Sign in </Link> : <Link to='/signin' className='nav-right-buttons' onClick={() => toggleAuthenticated(false)}> Sign out </Link>
-        }
+        <div className='nav-right-ctn'>
+          <Link to='/' className='nav-right-buttons'> Home </Link>
+          <Link to='/profile'className='nav-right-buttons'> Profile </Link>
+          {
+            (!authenticated) ? <Link to='/signin' className='nav-right-buttons'> Sign in </Link> : <Link to='/signin' className='nav-right-buttons' onClick={() => toggleAuthenticated(false)}> Sign out </Link>
+          }
+        </div>
       </div>
     </div>
   )

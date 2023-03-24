@@ -113,15 +113,19 @@ export default function App() {
  
   return (
     <DataContext.Provider value={{users, setUsers, comments, setComments, posts, setPosts, followers, setFollowers, accessToken, setAccessToken, songQueue, setSongQueue, user, setUser, authenticated, toggleAuthenticated }}>
-      <div className="App">
-        <Nav authenticated={authenticated}user={user}/>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/signin" element={<SignIn setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/profile" element={<Profile user={user} authenticated={authenticated}/>}/>
-          <Route path="/profile/update" element={<UpdateProfile user={user} toggleAuthenticated={toggleAuthenticated}/>}/>
-        </Routes>
+      <div className='App'>
+        <section className='nav-section'>
+          <Nav authenticated={authenticated}user={user}/>
+        </section>
+        <section className='main-section'>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/signin" element={<SignIn setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
+            <Route path="/register" element={<Register/>}/>
+            <Route path="/profile" element={<Profile user={user} authenticated={authenticated}/>}/>
+            <Route path="/profile/update" element={<UpdateProfile user={user} toggleAuthenticated={toggleAuthenticated}/>}/>
+          </Routes>
+        </section>
       </div>
     </DataContext.Provider>
   ) 

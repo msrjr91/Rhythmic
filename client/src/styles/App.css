@@ -1,133 +1,223 @@
+/* App.js */
 .App {
-    text-align: center;
-    background: rgb(20, 20, 20);
-    height: 100px;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(20, 20, 20);
+  overflow: hidden;
 }
 
-body {
-    background-color: rgb(64, 93, 101);
+.nav-section {
+  margin: 1vh;
+  height: 19vh;
+  background: rgb(18, 30, 37);
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
-.nav {
-    height: 200px;
-    background: rgb(51, 51, 51);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    text-align: center;
-    border: solid black 1px; 
+.main-section {
+  margin: 1vh;
+  margin-top: 0px;
+  height: 78vh;
+  background: rgb(77, 106, 114);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
+.Nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Nav.js */
 .nav-left {
-    margin: 20px;
-    display: flex;
-    justify-content: left;
-}
-
-.nav-right {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-}
-
-.nav-right-buttons {
-    margin: 20px;
-    height: 20px;
-    color: white;
-    text-decoration: solid;
+  margin: 20px;
+  display: flex;
+  justify-content: left;
 }
 
 .logo {
-    width: 200px;
-    margin-bottom: -35px;
-    margin-top: -20px;
+  height: 175px;
+  margin-bottom: -30px;
+  margin-top: -20px;
 }
 
 .registerbtn {
-    width: 200px;
-    height: 35px;
-    text-align: center;
-    border-radius: 80px;
-    background-color: rgb(209, 150, 87);
-    font-style: italic;
-    font-size: 13px;
+  width: 200px;
+  height: 35px;
+  text-align: center;
+  border-radius: 80px;
+  background-color: rgb(216, 161, 103);
+  font-style: italic;
+  font-size: 13px;
 }
 
-.home-container {
-    display: flex;
-    flex-direction: column;
-    background: rgb(64, 93, 101);
-    height: 806px;
+.registerbtn:hover {
+  width: 210px;
+  font-size: 15px;
 }
-.home-feed {
-    display: flex;
-    justify-content: space-between;
-} 
+
+.nav-right {
+  display: flex;
+  justify-content: right;
+}
+
+.nav-right-ctn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nav-right-buttons {
+  width: 60px;
+  margin: 20px;
+  height: 20px;
+  color: white;
+  text-decoration: solid;
+}
+
+.nav-right-buttons:hover {
+  font-size: 17px;
+}
+
+/* Home.js */
+.Home {
+  display: flex;
+  justify-content: space-around;
+}
 
 .sectionctn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 75vh;
 }
 
-.feed-outer {
-    width: 100%;
-    border: 1px solid rgb(51, 51, 51);
-    overflow: hidden;
-    height: 100%;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 3px rgba(60, 60, 60, 0.8);
-    justify-content: space-around;
+.info-ctn {
+  width: 50vh;
+  border: 1px solid rgb(51, 51, 51);
+  border-radius: 8%;
+  box-shadow: 0 0 10px 3px rgba(60, 60, 60, 0.8);
+  justify-content: space-around;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.feed-inner {
-    overflow-y: scroll;
-    height: 800px;
-    width: 450px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.feed h1 {
-    color: rgb(209, 150, 87);
-    text-decoration: underline;
-    font-size: 27px;
-}
-
-.feed h2 {
-    color: bisque;
-}
-
-.feed-inner img {
-    border-radius: 50%;
-    /* justify-content: left;
-    display: flex;
-    align-items: center; */
-    /* box-shadow:0 0 .5em rgb(249, 247, 244); */
+.info-ctn::-webkit-scrollbar { 
+  display: none;  
 }
 
 .titles h1 {
-    font-style: italic;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-size: 25px;
 }
 
-.tracks-container p {
-    color: black;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.tracks-ctn {
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.post-div {
-    border-bottom: 3px solid black;
-    overflow: auto;
-    overflow-y: scroll;
-    height: 200px;
-    padding: 20px;
-    width: 90%;
-    /* background: rgba(255, 255, 255, 0.3); */
+.track {
+  margin: 5px;
+  border-bottom: 1px solid black;
+  height: 200px;
+  padding: 20px;
 }
+
+.track-img-ctn {
+  padding-right: 30px;
+}
+
+.track-artist {
+  display: flex;
+  justify-content: start;
+  margin-left: 50px;
+}
+
+.track h3 {
+  font-size: 20px;
+  color: rgb(217, 173, 53)
+}
+
+.track-poster-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow:0 0 .5em rgb(249, 247, 244);
+}
+
+.track-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comments-ctn {
+  color: black;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.comment {
+  margin: 5px;
+  height: 200px;
+  border-bottom: 1px solid black;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.comment-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment h3 {
+  font-size: 20px;
+  color: rgb(217, 173, 53)
+}
+
+.comment-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.comment p {
+  color: black;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0%;
+}
+
+.comment-poster-img {
+  border-radius: 50%;
+  box-shadow:0 0 .5em rgb(249, 247, 244);
+  height: 120px;
+}
+
+.artist-ctn {
+  color: black;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.artist-poster-img {
+  border-radius: 50%;
+  box-shadow:0 0 .5em rgb(249, 247, 244);
+  height: 150px;
+}
+
+
+
+
+
+
 
 .post-div::-webkit-scrollbar {
     display: none;
@@ -143,62 +233,19 @@ body {
     color: rgb(217, 173, 53);
 }
 
-.comment-div {
-    border-bottom: 3px solid black;
-    overflow-y: scroll;
-    overflow: auto;
-    height: 200px;
-    padding: 20px;
-    width: 90%;
-}
-
-.comment-div::-webkit-scrollbar {
-    display: none;
-}
-
-.comment-div p {
-    color: black;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* justify-content: right;
-    padding-left: 110px;
-    justify-content: right;
-    /* display: flex; */
-    margin: 0%;
-
-}
-
-.comment-div img {
-    height: 100px;
-    box-shadow:0 0 .5em rgb(249, 247, 244);
-    /* justify-content: left;
-    display: flex; */
-
-}
-
-.comment-div h3 {
-    font-size: 10px;
-    color: rgb(217, 173, 53);
-    /* display: flex;
-    justify-content: left; */
-}
-
-
-.artists-container {
+.artists-ctn {
     padding-left: 20px;
-    /* background: rgba(255, 255, 255, 0.3); */
     text-align: center;
 
 }
 
-.artists-container img {
+.artists-ctn img {
     box-shadow:0 0 .5em rgb(249, 247, 244);
     margin: auto;
     display: block;
-    /* display: grid;
-    justify-items: center; */
 }
 
-.artists-container h2 {
+.artists-ctn h2 {
     color: rgb(217, 173, 53);
     text-align: center;
 }
