@@ -18,7 +18,7 @@ export default function Nav() {
                 <SearchBar />
             </div>
             <div className="nav-center">
-                <img className="logo" src="/images/rhythmic.png" alt="" />
+                <img className="logo" src="/rhythmic.png"/>
                 <div className="center-bottom">
                     {
                         (!authenticated)?<button className="registerbtn" onClick={() => navigate('/register')}>What's Your Rhythm?</button>:null
